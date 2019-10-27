@@ -1,0 +1,6 @@
+convert -transparent white -set colorspace Gray INFILE OUTFILE
+
+THEN
+
+./css/style.css:70:#IMGID
+./css/style.css:70:#IMGID:hover
