@@ -18,23 +18,65 @@ License URL: https://creativecommons.org/licenses/by/4.0/
     <title>Iosif Angelidis - Homepage</title>
 
     <!-- Global stylesheets -->
+    <link href="css/templatemo-style.css" rel="stylesheet">
     <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,200,300,400,500,600,700,800,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <link href="devicon/devicon.min.css" rel="stylesheet">
-    <link href="css/devicons/css/devicons.min.css" rel="stylesheet">
-    <link href="css/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
-    <link href="font-logos/assets/font-logos.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/animate.min.css">
+    <link href="css/animate.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+
+    <script src="js/typed.js/typed.min.js"></script>
+
+
+    <script src="js/jquery/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+            var wow = new WOW(
+                {
+                    boxClass: 'wow',      // animated element css class (default is wow)
+                    animateClass: 'animated', // animation css class (default is animated)
+                    offset: 0,          // distance to the element when triggering the animation (default is 0)
+                    mobile: false,       // trigger animations on mobile devices (default is true)
+                    live: true,       // act on asynchronously loaded content (default is true)
+                    callback: function (box) {
+                        // the callback is fired every time an animation is started
+                        // the argument that is passed in is the DOM node being animated
+                    },
+                    scrollContainer: null // optional scroll container selector, otherwise use window
+                }
+            );
+            wow.init();
+            $(".back-top").hide();
+		
+            $('.back-top a').on('click', function(event) {
+                $('body,html').animate({scrollTop:0},800);
+                return false;
+            });
+
+            $('home-button').on('click', function(event) {
+                $('body,html').animate({scrollTop:0},800);
+                return false;
+            });
+        });
+        $(window).on('scroll', function() {
+		// Back to top							
+            if($(this).scrollTop()>150){
+                $('.back-top').fadeIn();
+            }
+            else{
+                $('.back-top').fadeOut();
+            }
+        });
+    </script>
 
 </head>
 
-<body id="page-top">
+<body id="page-top" class="grey darken-4">
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top " id="sideNav">
+        <a class="navbar-brand js-scroll-trigger" id="home-button" href="#">
             <span class="d-block d-lg-none  mx-0 px-0"><img src="img/android-chrome-512x512.png" style="width:32px;height:32px;"></span>
             <span class="d-none d-lg-block">
                 <p><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/IMG_20190204_195706_ex.jpg"
@@ -48,41 +90,39 @@ License URL: https://creativecommons.org/licenses/by/4.0/
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#about">About</a>
+                    <a class="sidebar-buttons" style="text-decoration: none;" href="#about">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#experience">Experience</a>
+                    <a class="sidebar-buttons" style="text-decoration: none;" href="#experience">Experience</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#projects">Projects</a>
+                    <a class="sidebar-buttons" style="text-decoration: none;" href="#projects">Projects</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#education">Education</a>
+                    <a class="sidebar-buttons" style="text-decoration: none;" href="#education">Education</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#skills">Skills</a>
+                    <a class="sidebar-buttons" style="text-decoration: none;" href="#skills">Skills</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#distinctions">Distinctions</a>
+                    <a class="sidebar-buttons" style="text-decoration: none;" href="#distinctions">Distinctions</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#research_interests">Research Interests</a>
+                    <a class="sidebar-buttons" style="text-decoration: none;" href="#research_interests">Research Interests</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#publications">Publications</a>
+                    <a class="sidebar-buttons" style="text-decoration: none;" href="#publications">Publications</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#academic_activities">Additional Academic Activities</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#interests">Interests</a>
+                    <a class="sidebar-buttons"style="text-decoration: none;" href="#interests">Interests</a>
                 </li>
             </ul>
         </div>
     </nav>
 
-    <div class="container-fluid p-0">
+        <div class="container-fluid p-0" id="particles-js"></div>
 
+    <main id="main">
         <!--====================================================
                         ABOUT
     ======================================================-->
@@ -90,58 +130,57 @@ License URL: https://creativecommons.org/licenses/by/4.0/
             <div class="my-auto">
                 <div class="resume-item d-flex flex-column flex-md-row">
                     <div class="mr-auto">
-                        <h1 class="mb-0">Iosif
-                            <span class="text-primary">Angelidis</span>
-                        </h1>
+                        <h1>Hi, I'm Iosif <span class="text-primary">Angelidis</span></h1>
+                        <h2>I'm a <span id="typed" data-typed-items="developer, data scientist, researcher"></span></h2>
                         <div>
-                            <ul class="list-inline list-social-icons mb-0">
-                                <li class="contact-add contact-box-desc list-inline-item">
-                                    <h3><i class="fa fa-map-marker cl-atlantis fa-2x"></i> Address</h3>
-                                    <p>University of Athens, 157 84, Ilissia</p>
+                            <ul>
+                                <li style="vertical-align: middle;" class="contact-add contact-box-desc list-inline-item">
+                                    <h3><i class="fa fa-map-marker cl-atlantis fa-2x"></i></h3>
                                 </li>
-                                <li class="list-inline-item">·</li>
-                                <li class="contact-phone contact-side-desc contact-box-desc list-inline-item">
-                                    <h3><i class="fa fa-phone cl-atlantis fa-2x"></i> Phone</h3>
-                                    <p>+30 694 7747 843</p>
+                                <li class="list-inline-item">Athens, Greece</li>
+                            </ul>
+                            <ul>
+                                <li style="vertical-align: middle;" class="contact-phone contact-box-desc list-inline-item">
+                                    <h3><i class="fa fa-phone cl-atlantis fa-2x"></i></h3>
                                 </li>
-                                <li class="list-inline-item">·</li>
-                                <li class="contact-phone contact-side-desc contact-box-desc list-inline-item">
+                                <li class="list-inline-item">+30 694 7747 843</li>
+                            </ul>
+                            <ul>
+                                <li style="vertical-align: middle;" class="contact-phone contact-box-desc list-inline-item">
                                     <div class="contact-email">
-                                        <h3><i class="fa fa-envelope-o cl-atlantis fa-2x"></i> Email</h3>
+                                        <h3><i class="fa fa-envelope-o cl-atlantis fa-2x"></i></h3>
                                     </div>
+                                </li>
+                                <li class="list-inline-item">
                                     <address class="address-details-f">
-                                        Email: <a href="mailto:iosang@di.uoa.gr">iosang<span style="display:none">-remove-</span>@di.uoa.gr</a>
+                                    <a href="mailto:iosang@di.uoa.gr">iosif.angelidis<span style="display:none">-remove-</span>@gmail.com</a>
                                     </address>
                                 </li>
                             </ul>
-                        </div>
                     </div>
+                </div>
                     <div class="p0 m0 text-center">
                         <p class="card-text">Scan contact card</p>
-                        <p><img id="qr-code" class="card-img-top" alt="Scannable QR code with contact info" style="width:150px;height:150px;"
-                                src="img/qr.png" /></p>
+                        <p><img id="qr-code" class="card-img-top" alt="Scannable QR code with contact info" style="width:300px;height:300px;"
+                                src="img/qrcode.png" /></p>
                     </div>
                 </div>
 
                 <div>
-                    <p align="justify">Iosif Angelidis was born in Cholargos, Attica, on 16/06/1993. He is a graduate of the Department
+
+                    <p align="justify">
+                        Iosif Angelidis is a graduate of the Department
                         of Informatics & Telecommunications of the National and Kapodistrian University of Athens, his undergraduate 
-                        dissertation being in the area of "Theoretical Informatics", while he has completed his post-graduate studies in "Information and Data
-                        Management". He is a member of Management of Data and Information Knowledge Group
-                        (<a href="http://www.madgik.di.uoa.gr">MADgIK</a>) and the <a href="http://ai.di.uoa.gr/">AI group</a> of the University of Athens.</p>
+                        dissertation being in the area of "Theoretical Informatics'', while he has completed his post-graduate studies in "Information and Data
+                        Management''. He became a member of Management of Data and Information Knowledge Group
+                        (<a href="http://www.madgik.di.uoa.gr">MADgIK</a>) and the <a href="http://ai.di.uoa.gr/">AI group</a> of the University of Athens. He has worked as a researcher in the same deparment, focusing on various aspects of knowledge harvesting, representation, reasoning and analytics.</p>
 
-                    <p align="justify">In the context of his MSc thesis, "Named Entity Recognition and Linking in Greek Legislation",
-                        under the supervision of professor Manolis Koubarakis and PhD Candidate Ilias Chalkidis, he
-                        developed and maintained a Named Entity Recognizer which recognizes and extracts persons,
-                        organizations, geo-political entities, legal references, public documents and unofficial
-                        geographical landmarks found in the Government Gazette by utilizing Neural Networks and Deep Learning
-                        technologies. These entities are being encoded as RDF data based on a Semantic Web ontology and
-                        then interlinked with other open public datasets (Greek Administrative Geography, Greek
-                        DBpedia Politicians, EUR-Lex) with Silk.</p>
+                    <p align="justify">He is passionate about Java backend development and RESTful APIs, emphasizing documenting the final product, while he tries to further optimize              
+                        implementations (when a deadline allows it) by employing a strong theoretical background in algorithms and the internal workings of languages, databases and computer 
+                        memory. Having experience in data science, he is also capable of providing efficient solutions in data manipulation and task automation via Python scripts. Always eager to 
+                        learn and happy to assist peers in tackling any kind of hurdle in software development. </p>
 
-                    <p align="justify">He has been a researcher, further developing, optimizing and maintaining the Named Entity Recognizer
-                            component he developed for the project <a href="http://legislation.di.uoa.gr">Nomothesi@</a> API, still contributing to the project when time allows. Also, he has worked as a researcher in Choronomothesia, 
-                            a parallel project with the goal of extracting geospatial information and coordinates from tables of legal documents of the National Printing Office of Greece.
+                    <p align="justify">Currently, he is seeking employment, aiming to participate in interesting projects to expand his horizons and learn new technologies and workflows. <b>Military obligations fulfilled by July 10, 2020</b>.
                     <!--
                     <p>Data scientist and software developer with
                         experience in
@@ -152,8 +191,8 @@ License URL: https://creativecommons.org/licenses/by/4.0/
 
                     <div class="resume-item d-flex flex-column flex-md-row mb-5"></div>
 
-                    <button class="btn btn-general btn-green"><i class="fa fa-download"></i> <a href="documents/CV.pdf"
-                            style="text-decoration: none;color:inherit;">Download
+                    <button style="height: 60px;" class="btn btn-general btn-green"><i class="fa fa-download"></i> <a href="documents/CV.pdf"
+                            style="text-decoration: none;color:inherit;" target="_blank">Download
                             CV</a>
                     </button>
 
@@ -242,43 +281,50 @@ License URL: https://creativecommons.org/licenses/by/4.0/
     ======================================================-->
 
         <section class="resume-section p-3 p-lg-5 " id="experience">
-            <div class="row my-auto">
-                <div class="col-12">
-                    <h2 class="  text-center">Experience</h2>
-                    <div class="mb-5 heading-border"></div>
-                </div>
-                <div class="main-experience" id="experience-box">
-                    <div class="experience">
-                        <div class="experience-icon"></div>
-                        <div class="experience-content">
-                            <span class="date wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.4s">Jul 1, 2017 -
-                                Oct 7, 2019</span>
-                            <div class="inner-content wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="1s">
-                                <h5 class="title">Researcher</h5>
-                                <p align="justify">Developing, optimizing and maintaining the Named Entity Recognizer component of
-                                    "<a href="http://legislation.di.uoa.gr">Nomothesi@</a>".</p>
-                                <p align="justify">Developer and researcher in "Choronomothesia", another project parallel to "<a href="http://legislation.di.uoa.gr">Nomothesi@</a>" with the goal 
-                                    of extracting geospatial information and coordinates from tables of legal documents of the National Printing Office of Greece.</p>
-                                <p align="justify">Focus on various aspects of knowledge harvesting, representation, reasoning and
-                                    analytics.</p>
-                                <p align="justify">Information extraction, web crawling, deep neural networks and machine learning,
-                                    natural
-                                    language processing.</p>
-                                <p align="justify">Member of Management of Data and Information Knowledge Group (<a href="http://www.madgik.di.uoa.gr">MADgIK</a>)
-                                    and the <a href="http://ai.di.uoa.gr/">AI group</a> of the University of Athens.</p>
+
+            <h2><u>Experience</u></h2> <br>
+
+            <div class="container tm-container-2">
+
+                <div class="row tm-section-mb">
+                    <div class="col-lg-12">
+                        <div class=" tm-timeline-item">
+                            <div class="tm-timeline-item-inner">
+                                <i style="font-size:7em;display: inline-block;border-radius: 60px;box-shadow: 0px 0px 2px #888;padding: 0.25em 0.3em;" class="fa fa-briefcase rounded-circle"></i>
+                                <div class="tm-timeline-connector">
+                                    <p class="mb-0">&nbsp;</p>
+                                </div>
+                                <div class="tm-timeline-description-wrap">
+                                    <div class="tm-bg-dark tm-timeline-description">
+                                        <span class="tm-text-green tm-font-400 date wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.4s">2017 - 2019</span>
+                                        <div class="inner-content wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="1s">
+                                            <h5 class="tm-text-green tm-font-400">Researcher</h5>
+                                            <p align="justify">Researcher/software developer in the projects "<a href="https://cordis.europa.eu/project/id/730124">Copernicus App Lab</a>" 
+                                                (Horizon2020, EU Research and Innovation Programme), "<a href="http://legislation.di.uoa.gr">Nomothesi@</a>", "Choronomothesia".</p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
+
+                            <div class="tm-timeline-connector-vertical"></div>
+
                         </div>
-                    </div>
-                    <div class="experience">
-                        <div class="experience-icon"></div>
-                        <div class="experience-content">
-                            <span class="date wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.4s">Jul 1,
-                                2017 - Oct 31, 2017</span>
-                            <div class="inner-content wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="1s">
-                                <h5 class="title">Researcher</h5>
-                                <p align="justify">Researcher/software developer in the project "Copernicus App Lab" (Horizon2020,
-                                    EU
-                                    Research and Innovation Programme).</p>
+                        <div class=" tm-timeline-item">
+                            <div class="tm-timeline-item-inner">
+                                <i style="font-size:7em;display: inline-block;border-radius: 60px;box-shadow: 0px 0px 2px #888;padding: 0.25em 0.3em;" class="fa fa-briefcase rounded-circle"></i>
+                                <div class="tm-timeline-connector">
+                                    <p class="mb-0">&nbsp;</p>
+                                </div>
+                            <div class="tm-timeline-description-wrap">
+                                <div class="tm-bg-dark tm-timeline-description">
+                                    <span class="tm-text-cyan tm-font-400 date wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.4s">2015 - 2019</span>
+                                    <div class="inner-content wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="1s">
+                                        <h5 class="tm-text-cyan tm-font-400">Teaching Assistant</h5>
+                                        <p align="justify">Teaching Assistant in the National and Kapodistrian University of Athens, 
+                                            Department of Informatics and Telecommunications, in: Artificial Intelligence, Object Oriented Programming Lab for Object Oriented Programming. 
+                                            Supervision/development of educational material for Algorithms and Complexity and Operations Research undergrad courses.</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -291,338 +337,346 @@ License URL: https://creativecommons.org/licenses/by/4.0/
     ======================================================-->
 
         <section class="resume-section p-3 p-lg-5" id="projects">
-            <div class="row my-auto">
-                <div class="col-12">
-                    <h2 class="  text-center">Projects</h2>
-                    <div class="mb-5 heading-border"></div>
-                </div>
 
-                <div class="resume-item col-12 ">
-                    <div class="card mx-0 p-4 mb-5" style="border-color: #BD5D38; box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.21);">
-                        <div class=" resume-content mr-auto">
-                            <h3 class="mb-0">
-                                <p><img src="img/nomothesia.png" class="img-fluid mb-3" alt="" style="width:40px;height:40px;"></p><a
-                                    href="http://legislation.di.uoa.gr">Nomothesi@</a>
-                            </h3>
-                            <p class="subheading mb-3">Keywords: legislative knowledge representation, open
-                                data,
-                                e-government, RDF/OWL metadata, Spring MVC, universal resource identifiers,
-                                REST
-                                services</p>
-                            <p align="justify">An important kind of government data is the data related to
-                                legislation.
-                                Legislation
-                                applies to every aspect of people’s living and evolves, continuously building a
-                                huge
-                                network of interlinked legal documents. Therefore, it is important for a
-                                government to
-                                offer services which make legislation easily accessible to the public, aiming
-                                at
-                                informing
-                                them, enabling them to defend their rights, or use legislation as part of their
-                                job.
-                                Towards this direction, many European Union (EU) countries have already
-                                automated the
-                                digitalization process by developing platforms for archiving legislation
-                                documents and
-                                offering on-line access to them.</p>
+                <h2><u>Projects</u></h2> <br>
 
-                            <p align="justify">Following the successful efforts of other countries throughout
-                                Europe,
-                                Nomothesi@ project
-                                aims at modernizing the way greek legislation is made public and providing
-                                high-scale
-                                legal
-                                services. We envision a new state of affairs in which ordinary citizens have
-                                advanced
-                                search capabilities at their disposal about legislation. We also envision that
-                                legislation
-                                is published in such a way that developers can consume it, and so that it can
-                                also be
-                                combined with other open data to increase its value for interested parties or
-                                people.
-                                Currently, there is no other effort in Greece or related decisions made by
-                                government
-                                institutions and administration alike which takes this perspective on
-                                legislation into
-                                considerations.</p>
+                <div class="container tm-container-2">
 
-                            <p align="justify">Based on the above principles, we developed Nomothesi@, a
-                                platform which
-                                makes Greek
-                                legislation available on the Web as linked open data. Nomothesi@ provides open
-                                access
-                                in a
-                                library of more than 12,000 pieces of legislation, interlinked with
-                                approximately
-                                124,400
-                                connections and over 8,000 unique entities, such as geospatial entities,
-                                persons,
-                                organizations and geographical landmarks (points of interest).</p>
-                        </div>
-                        <div class="resume-date text-md-right">
-                            <span class="text-primary">Jul 2017 – Present</span>
+                    <div class="row tm-section-mb">
+                        <div class="col-lg-12">
+                            <div class=" tm-timeline-item">
+                                <div class="tm-timeline-item-inner">
+                                    <img style="background-color: white;" src="img/nomothesia.png" alt="Image" class="rounded-circle tm-img-timeline">
+                                    <div class="tm-timeline-connector">
+                                        <p class="mb-0">&nbsp;</p>
+                                    </div>
+                                    <div class="tm-timeline-description-wrap">
+                                        <div class="tm-bg-dark tm-timeline-description">
+
+                                            <h3 class="tm-text-green tm-font-400 date wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.4s"><a
+                                                href="http://legislation.di.uoa.gr">Nomothesi@</a> (Jul 2017 – Present)</h3>
+                                                <p align="justify" class="inner-content wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="1s">An important kind of government data is the data related to
+                                                    legislation.
+                                                    Legislation
+                                                    applies to every aspect of people’s living and evolves, continuously building a
+                                                    huge
+                                                    network of interlinked legal documents. Therefore, it is important for a
+                                                    government to
+                                                    offer services which make legislation easily accessible to the public, aiming
+                                                    at
+                                                    informing
+                                                    them, enabling them to defend their rights, or use legislation as part of their
+                                                    job.
+                                                    Towards this direction, many European Union (EU) countries have already
+                                                    automated the
+                                                    digitalization process by developing platforms for archiving legislation
+                                                    documents and
+                                                    offering on-line access to them.</p>
+                    
+                                                <p align="justify" class="inner-content wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="1s">Following the successful efforts of other countries throughout
+                                                    Europe,
+                                                    Nomothesi@ project
+                                                    aims at modernizing the way greek legislation is made public and providing
+                                                    high-scale
+                                                    legal
+                                                    services. We envision a new state of affairs in which ordinary citizens have
+                                                    advanced
+                                                    search capabilities at their disposal about legislation. We also envision that
+                                                    legislation
+                                                    is published in such a way that developers can consume it, and so that it can
+                                                    also be
+                                                    combined with other open data to increase its value for interested parties or
+                                                    people.
+                                                    Currently, there is no other effort in Greece or related decisions made by
+                                                    government
+                                                    institutions and administration alike which takes this perspective on
+                                                    legislation into
+                                                    considerations.</p>
+                    
+                                                <p align="justify" class="inner-content wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="1s">Based on the above principles, we developed Nomothesi@, a
+                                                    platform which
+                                                    makes Greek
+                                                    legislation available on the Web as linked open data. Nomothesi@ provides open
+                                                    access
+                                                    in a
+                                                    library of more than 12,000 pieces of legislation, interlinked with
+                                                    approximately
+                                                    124,400
+                                                    connections and over 8,000 unique entities, such as geospatial entities,
+                                                    persons,
+                                                    organizations and geographical landmarks (points of interest).</p>
+                                            <p align="justify" class="tm-text-green float-right mb-0 date wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.4s"">Keywords: legislative knowledge representation, open
+                                                data, e-government, RDF/OWL metadata, Spring MVC, universal resource identifiers, REST services</p>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <div class="tm-timeline-connector-vertical"></div>
+                            </div>
+
+                            <div class=" tm-timeline-item">
+                                <div class="tm-timeline-item-inner">
+                                    <img style="background-color: white;" src="img/android.png" alt="Image" class="rounded-circle tm-img-timeline">
+                                    <div class="tm-timeline-connector">
+                                        <p class="mb-0">&nbsp;</p>
+                                    </div>
+                                    <div class="tm-timeline-description-wrap">
+                                        <div class="tm-bg-dark tm-timeline-description">
+                                            <h3 class="tm-text-cyan tm-font-400 date wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.4s"><a href="https://www.dropbox.com/sh/46dg71devshdvv1/AAAvynY_ZJJcsGwdC6ZGsQg5a?dl=0">Airbnb-like
+                                                Android application</a> (2017 – 2018)</h3>
+                                            <p align="justify" class="inner-content wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="1s">The aim of this project was to develop a fully-functional
+                                                Android
+                                                application like Airbnb supporting Google Maps API, different user roles,
+                                                registration
+                                                and room reservation, as well as hosting rooms.</p>
+                                            <p align="justify" class="tm-text-cyan float-right mb-0 date wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.4s"">Keywords: Android development, Java, Airbnb, Google maps</p>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <div class="tm-timeline-connector-vertical"></div>
+                            </div>
+
+                            <div class=" tm-timeline-item">
+                                <div class="tm-timeline-item-inner">
+                                    <img style="background-color: white;" src="img/logo-cop-app-lab2.jpeg" alt="Image" class="rounded-circle tm-img-timeline">
+                                    <div class="tm-timeline-connector">
+                                        <p class="mb-0">&nbsp;</p>
+                                    </div>
+                                    <div class="tm-timeline-description-wrap">
+                                        <div class="tm-bg-dark tm-timeline-description">
+                                            <h3 class="tm-text-yellow tm-font-400 date wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.4s"><a href="https://cordis.europa.eu/project/id/730124">Copernicus
+                                                App Lab</a></h3>
+                                                <p align="justify" class="inner-content wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="1s">Geospatial data manipulation and production in the topics of LAI
+                                                    (Leaf
+                                                    Area Index) of Paris (from netCDF format), NO<sub>2</sub>, O<sub>3</sub>, UV
+                                                    emissions
+                                                    in Europe and oil-spills in Sweeden for the Copernicus App Lab in addition to
+                                                    writing
+                                                    of scripts to automate tasks within the group and improve efficiency.</p>
+                                            <p align="justify" class="tm-text-yellow float-right mb-0 date wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.4s"">2017 – 2018</p>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <div class="tm-timeline-connector-vertical"></div>
+                            </div>
+
+                            <div class=" tm-timeline-item">
+                                <div class="tm-timeline-item-inner">
+                                    <img style="background-color: white;" src="img/athena-red_alpha.jpg" alt="Image" class="rounded-circle tm-img-timeline">
+                                    <div class="tm-timeline-connector">
+                                        <p class="mb-0">&nbsp;</p>
+                                    </div>
+                                    <div class="tm-timeline-description-wrap">
+                                        <div class="tm-bg-dark tm-timeline-description">
+                                            <h3 class="tm-text-orange tm-font-400 date wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.4s"><a href="https://pergamos.lib.uoa.gr/uoa/dl/frontend/en/browse/2766525">Named
+                                                Entity Recognition and Linking in Greek Legislation</a>(MSc dissertation, 2017-2018)</h3>
+                                                <p align="justify" class="inner-content wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="1s">We show how entity recognition in Greek legislation texts can be
+                                                    achieved
+                                                    by utilizing a
+                                                    named entity recognizer (NER). Our work is the first of its kind for the Greek
+                                                    language
+                                                    in
+                                                    such an extended form and one of the few that examines legal text. We apply
+                                                    grid search
+                                                    on multiple neural network architectures and combination of hyper-parameters to
+                                                    maximize the efficiency of our approach. We show that, utilizing a big legal corpus
+                                                    we
+                                                    built
+                                                    word/token-shape embeddings using Word2Vec, and finally achieve 86% accuracy on
+                                                    average in recognition of organizations, legal references, geographical
+                                                    landmarks,
+                                                    persons,
+                                                    geo-political entities (GPEs) and public documents. The evaluation of our
+                                                    methodology
+                                                    is
+                                                    based on the metrics of precision, recall, f<sub>1</sub>-score per entity type for each
+                                                    neural
+                                                    network.
+                                                    Finally, we measure the ratio of correctly guessed links for the interlinking
+                                                    of RDF datasets produced by our approach with well-known public datasets and how new
+                                                    knowledge can be inferred indirectly by our approach from DBpedia, ELI (European
+                                                    Legislation Identifier) and GAG (Greek administrative geography) of Kallikratis.</p>
+                                            <p align="justify" class="tm-text-orange float-right mb-0 date wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.4s"">Keywords: named entity recognition and linking, legislative
+                                                knowledge representation, entity reference representation, linked open data, deep
+                                                learning, entity generation</p>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <div class="tm-timeline-connector-vertical"></div>
+                            </div>
+
+                            <div class=" tm-timeline-item">
+                                <div class="tm-timeline-item-inner">
+                                    <img style="background-color: white;" src="img/library.png" alt="Image" class="rounded-circle tm-img-timeline">
+                                    <div class="tm-timeline-connector">
+                                        <p class="mb-0">&nbsp;</p>
+                                    </div>
+                                    <div class="tm-timeline-description-wrap">
+                                        <div class="tm-bg-dark tm-timeline-description">
+                                            <h3 class="tm-text-green tm-font-400 date wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.4s"><a href="http://dl104.madgik.di.uoa.gr/eamgroup56/index.php">
+                                                Development of a lending library website with user roles and shopping cart
+                                                functionalities</a> (2015-2016)</h3>
+                                            <p align="justify" class="inner-content wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="1s">The aim of this project was to develop a fully-functional
+                                                lending
+                                                library website that supports multiple user roles, registration, shopping cart
+                                                functionalities etc. </p>
+                                            <p align="justify" class="tm-text-green float-right mb-0 date wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.4s"">Keywords: web development, shopping cart, human-computer
+                                                interaction</p>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <div class="tm-timeline-connector-vertical"></div>
+                            </div>
+
+                            <div class=" tm-timeline-item">
+                                <div class="tm-timeline-item-inner">
+                                    <img style="background-color: white;" src="https://bytebucket.org/ravatar/%7B1f730acd-6037-4290-8678-eff519fb779e%7D?ts=875594" alt="Image" class="rounded-circle tm-img-timeline">
+                                    <div class="tm-timeline-connector">
+                                        <p class="mb-0">&nbsp;</p>
+                                    </div>
+                                    <div class="tm-timeline-description-wrap">
+                                        <div class="tm-bg-dark tm-timeline-description">
+                                            <h3 class="tm-text-cyan tm-font-400 date wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.4s"><a href="https://bitbucket.org/Metimdjai/vrppd/src/master/">Cooperative
+                                                Routing and Scheduling of an Electric Vehicle Fleet Managing Dynamic Customer Requests (2016)</a></h3>
+                                            <p align="justify" class="inner-content wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="1s">Environmental issues and consumer concerns have paved the way
+                                                for
+                                                governments to legislate
+                                                and help usher into operation alternative-fueled vehicles and pertinent
+                                                infrastructures. In
+                                                the last decade, battery-powered electric vehicles have been introduced and the
+                                                service
+                                                industry has followed suit and deployed such trucks in their distribution
+                                                networks.
+                                                However, electric vehicles do impose limitations when it comes to their
+                                                traveling
+                                                range.
+                                                Replenishing the power to the vehicle batteries may entail lengthy charging
+                                                visits at
+                                                respective stations. In this paper, we examine the problem of routing and
+                                                scheduling a
+                                                fleet of electric vehicles that seek to satisfy dynamic pickup and delivery
+                                                requests in
+                                                an
+                                                urban environment. We develop a web application to facilitate cooperation
+                                                between
+                                                organizations and individuals involved in urban freight transport. The
+                                                application uses
+                                                geolocation services and mobile devices to help manage the fleet and make
+                                                timely
+                                                decisions.
+                                                Moreover, we propose three heuristic recharging strategies to ensure that
+                                                electric
+                                                vehicles
+                                                can restore their energy levels in an effective manner. Through detailed
+                                                experimentation,
+                                                we show that the costs associated with the use of an electric vehicle fleet
+                                                concern
+                                                mainly
+                                                the size of the fleet. The impact regarding the total route length traveled is
+                                                less
+                                                evident
+                                                for all our strategies.</p>
+                                            <p align="justify" class="tm-text-cyan float-right mb-0 date wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.4s"">Keywords: urban cooperative computing, online scheduling 
+                                                for electric vehicle requests, power refueling for an electric vehicle fleet, GNSS</p>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <div class="tm-timeline-connector-vertical"></div>
+                            </div>
+        
+                            <div class=" tm-timeline-item">
+                                <div class="tm-timeline-item-inner">
+                                    <img style="background-color: white;" src="img/athena-red_alpha.jpg" alt="Image" class="rounded-circle tm-img-timeline">
+                                    <div class="tm-timeline-connector">
+                                        <p class="mb-0">&nbsp;</p>
+                                    </div>
+                                    <div class="tm-timeline-description-wrap">
+                                        <div class="tm-bg-dark tm-timeline-description">
+                                            <h3 class="tm-text-yellow tm-font-400 date wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.4s"><a href="https://bitbucket.org/Metimdjai/vehicle-routing/src/master/">Capacitated
+                                                Vehicle Routing with Time Windows</a> (Undergraduate dissertation, 2015)</h3>
+                                            <p align="justify" class="inner-content wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="1s">Capacitated Vehicle Routing Problem with Time Windows is a
+                                                problem that
+                                                has troubled
+                                                academics for many years due to its difficulty (it belongs to the class NP) and
+                                                many
+                                                approximate solutions that are fairly sufficient have been proposed. Of course,
+                                                a
+                                                plethora
+                                                of application of those solutions exists in practical applications. The goal of
+                                                the
+                                                program
+                                                documented in the present thesis is to initially solve the problem based on
+                                                classic
+                                                methods
+                                                from bibliography using real geographical data in Earth coords. After that, it
+                                                communicates
+                                                with a relational database which contains roads of Athens and info about their
+                                                direction
+                                                (unidirectional or bidirectional).</p>
+                
+                                            <p align="justify" class="inner-content wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="1s">Furthermore, it communicates with an in-memory key-value store
+                                                which
+                                                contains additional
+                                                dynamic info on roads. To be more specific, it contains positive and negative
+                                                percentage
+                                                weights that express dynamic roads' info. Positive weights represent traffic
+                                                and have a
+                                                value in the range of [0.0,1.0]. Negative weights represent drivers' experience
+                                                that
+                                                influences them to follow specific roads because they are aware that they will
+                                                reach
+                                                their
+                                                destination faster that way and have a value in the range of [-0.5,0.0].
+                                                Negative
+                                                weights
+                                                do not have the same range as positive ones due to intuition as road traffic
+                                                affects
+                                                the
+                                                decisions made a lot more than the driver's experience since a road could have
+                                                a
+                                                traffic
+                                                jam in an unexpected scenario.</p>
+                
+                                            <p align="justify" class="inner-content wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="1s">During the program's execution messages are being printed
+                                                explaining
+                                                algorithmic
+                                                decision-making in critical parts and saved in intermediate files in order to
+                                                study the
+                                                results after execution. Finally, a kml and a html file are produced so that
+                                                it's
+                                                possible
+                                                for the final result to be shown in any application capable of handling kml
+                                                files (or
+                                                html
+                                                if the user wishes to view the visualization on the web). Most common
+                                                applications
+                                                capable
+                                                of handling kml files are Google Earth, Google Maps and Marble.
+                                            </p>
+                                            <p align="justify" class="tm-text-yellow float-right mb-0 date wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.4s"">Keywords: vehicle routing, time windows, scheduling, transportation, guided local search</p>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="resume-item col-12 ">
-                    <div class="card mx-0 p-4 mb-5" style="border-color: #28a745; box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.21);">
-                        <div class=" resume-content mr-auto">
-                            <h3 class="mb-0">
-                                <p><img src="img/android.png" style="width:50px;height:50px;" class="img-fluid mb-3"
-                                        alt=""></p><a href="https://www.dropbox.com/sh/46dg71devshdvv1/AAAvynY_ZJJcsGwdC6ZGsQg5a?dl=0">Airbnb-like
-                                    Android application</a>
-                            </h3>
-                            <p class="subheading mb-3">Keywords: Android development, Java, Airbnb, Google maps</p>
-                            <p align="justify">The aim of this project was to develop a fully-functional
-                                Android
-                                application like Airbnb supporting Google Maps API, different user roles,
-                                registration
-                                and room reservation, as well as hosting rooms. </p>
-                        </div>
-                        <div class="resume-date text-md-right">
-                            <span class="text-primary">2017 – 2018</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="resume-item col-12 ">
-                    <div class="card mx-0 p-4 mb-5" style="border-color: #717171; box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.21);">
-                        <div class=" resume-content mr-auto">
-                            <h3 class="mb-0">
-                                <p><img src="img/logo-cop-app-lab2.jpeg" style="width:50px;height:50px;" class="img-fluid mb-3"
-                                        alt=""></p><a href="http://www.app-lab.eu/">Copernicus
-                                    App Lab</a>
-                            </h3>
-                            <p align="justify">Geospatial data manipulation and production in the topics of LAI
-                                (Leaf
-                                Area Index) of Paris (from netCDF format), NO<sub>2</sub>, O<sub>3</sub>, UV
-                                emissions
-                                in Europe and oil-spills in Sweeden for the Copernicus App Lab in addition to
-                                writing
-                                of scripts to automate tasks within the group and improve efficiency.</p>
-                        </div>
-                        <div class="resume-date text-md-right">
-                            <span class="text-primary">2017 – 2018</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="resume-item col-12 ">
-                    <div class="card mx-0 p-4 mb-5" style="border-color: #ffc107; box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.21);">
-                        <div class=" resume-content mr-auto">
-                            <h3 class="mb-0">
-                                <p><img src="img/athena-red_alpha.jpg" class="img-fluid mb-3" style="width:50px;height:50px;"
-                                        alt=""></p><a href="https://pergamos.lib.uoa.gr/uoa/dl/frontend/en/browse/2766525">Named
-                                    Entity Recognition and Linking in Greek Legislation</a>
-                            </h3>
-                            <p class="subheading mb-3">Keywords: named entity recognition and linking, legislative
-                                knowledge representation, entity reference representation, linked open data, deep
-                                learning, entity generation</p>
-                            <p align="justify">We show how entity recognition in Greek legislation texts can be
-                                achieved
-                                by utilizing a
-                                named entity recognizer (NER). Our work is the first of its kind for the Greek
-                                language
-                                in
-                                such an extended form and one of the few that examines legal text. We apply
-                                grid search
-                                on multiple neural network architectures and combination of hyper-parameters to
-                                maximize the efficiency of our approach. We show that, utilizing a big legal corpus
-                                we
-                                built
-                                word/token-shape embeddings using Word2Vec, and finally achieve 86% accuracy on
-                                average in recognition of organizations, legal references, geographical
-                                landmarks,
-                                persons,
-                                geo-political entities (GPEs) and public documents. The evaluation of our
-                                methodology
-                                is
-                                based on the metrics of precision, recall, f<sub>1</sub>-score per entity type for each
-                                neural
-                                network.
-                                Finally, we measure the ratio of correctly guessed links for the interlinking
-                                of RDF datasets produced by our approach with well-known public datasets and how new
-                                knowledge can be inferred indirectly by our approach from DBpedia, ELI (European
-                                Legislation Identifier) and GAG (Greek administrative geography) of Kallikratis.</p>
-                        </div>
-                        <div class="resume-date text-md-right">
-                            <span class="text-primary">2017 – 2018</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="resume-item col-12 ">
-                    <div class="card mx-0 p-4 mb-5" style="border-color: #17a2b8; box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.21);">
-                        <div class=" resume-content mr-auto">
-                            <h3 class="mb-0">
-                                <p><img src="img/library.png" style="width:50px;height:50px;" class="img-fluid mb-3"
-                                        alt=""></p><a href="http://dl104.madgik.di.uoa.gr/eamgroup56/index.php">
-                                    Development of a lending library website with user roles and shopping cart
-                                    functionalities</a>
-                            </h3>
-                            <p class="subheading mb-3">Keywords: web development, shopping cart, human-computer
-                                interaction</p>
-                            <p align="justify">The aim of this project was to develop a fully-functional
-                                lending
-                                library website that supports multiple user roles, registration, shopping cart
-                                functionalities etc. </p>
-                        </div>
-                        <div class="resume-date text-md-right">
-                            <span class="text-primary">2015-2016</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="resume-item col-12 ">
-                    <div class="card mx-0 p-4 mb-5" style="border-color: #17a2b8; box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.21);">
-                        <div class=" resume-content mr-auto">
-                            <h3 class="mb-0">
-                                <p><img src="https://bytebucket.org/ravatar/%7B1f730acd-6037-4290-8678-eff519fb779e%7D?ts=875594"
-                                        style="width:50px;height:50px;" class="img-fluid mb-3" alt=""></p><a href="https://bitbucket.org/Metimdjai/vrppd/src/master/">Cooperative
-                                    Routing and Scheduling of an Electric Vehicle Fleet Managing Dynamic
-                                    Customer
-                                    Requests</a>
-                            </h3>
-                            <p class="subheading mb-3">Keywords: urban cooperative computing, online scheduling
-                                for
-                                electric vehicle requests, power refueling for an electric vehicle fleet, GNSS</p>
-                            <p align="justify">Environmental issues and consumer concerns have paved the way
-                                for
-                                governments to legislate
-                                and help usher into operation alternative-fueled vehicles and pertinent
-                                infrastructures. In
-                                the last decade, battery-powered electric vehicles have been introduced and the
-                                service
-                                industry has followed suit and deployed such trucks in their distribution
-                                networks.
-                                However, electric vehicles do impose limitations when it comes to their
-                                traveling
-                                range.
-                                Replenishing the power to the vehicle batteries may entail lengthy charging
-                                visits at
-                                respective stations. In this paper, we examine the problem of routing and
-                                scheduling a
-                                fleet of electric vehicles that seek to satisfy dynamic pickup and delivery
-                                requests in
-                                an
-                                urban environment. We develop a web application to facilitate cooperation
-                                between
-                                organizations and individuals involved in urban freight transport. The
-                                application uses
-                                geolocation services and mobile devices to help manage the fleet and make
-                                timely
-                                decisions.
-                                Moreover, we propose three heuristic recharging strategies to ensure that
-                                electric
-                                vehicles
-                                can restore their energy levels in an effective manner. Through detailed
-                                experimentation,
-                                we show that the costs associated with the use of an electric vehicle fleet
-                                concern
-                                mainly
-                                the size of the fleet. The impact regarding the total route length traveled is
-                                less
-                                evident
-                                for all our strategies.</p>
-                        </div>
-                        <div class="resume-date text-md-right">
-                            <span class="text-primary">2016</span>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="resume-item col-12 ">
-                    <div class="card mx-0 p-4 mb-5" style="border-color: #ffc107; box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.21);">
-                        <div class=" resume-content mr-auto">
-                            <h3 class="mb-0">
-                                <p><img src="img/athena-red_alpha.jpg" style="width:50px;height:50px;" class="img-fluid mb-3"
-                                        alt=""></p><a href="https://bitbucket.org/Metimdjai/vehicle-routing/src/master/">Capacitated
-                                    Vehicle Routing with Time Windows</a>
-                            </h3>
-                            <p class="subheading mb-3">Keywords: vehicle routing, time windows, scheduling,
-                                transportation, guided local search</p>
-                            <p align="justify">Capacitated Vehicle Routing Problem with Time Windows is a
-                                problem that
-                                has troubled
-                                academics for many years due to its difficulty (it belongs to the class NP) and
-                                many
-                                approximate solutions that are fairly sufficient have been proposed. Of course,
-                                a
-                                plethora
-                                of application of those solutions exists in practical applications. The goal of
-                                the
-                                program
-                                documented in the present thesis is to initially solve the problem based on
-                                classic
-                                methods
-                                from bibliography using real geographical data in Earth coords. After that, it
-                                communicates
-                                with a relational database which contains roads of Athens and info about their
-                                direction
-                                (unidirectional or bidirectional).</p>
-
-                            <p align="justify">Furthermore, it communicates with an in-memory key-value store
-                                which
-                                contains additional
-                                dynamic info on roads. To be more specific, it contains positive and negative
-                                percentage
-                                weights that express dynamic roads' info. Positive weights represent traffic
-                                and have a
-                                value in the range of [0.0,1.0]. Negative weights represent drivers' experience
-                                that
-                                influences them to follow specific roads because they are aware that they will
-                                reach
-                                their
-                                destination faster that way and have a value in the range of [-0.5,0.0].
-                                Negative
-                                weights
-                                do not have the same range as positive ones due to intuition as road traffic
-                                affects
-                                the
-                                decisions made a lot more than the driver's experience since a road could have
-                                a
-                                traffic
-                                jam in an unexpected scenario.</p>
-
-                            <p align="justify">During the program's execution messages are being printed
-                                explaining
-                                algorithmic
-                                decision-making in critical parts and saved in intermediate files in order to
-                                study the
-                                results after execution. Finally, a kml and a html file are produced so that
-                                it's
-                                possible
-                                for the final result to be shown in any application capable of handling kml
-                                files (or
-                                html
-                                if the user wishes to view the visualization on the web). Most common
-                                applications
-                                capable
-                                of handling kml files are Google Earth, Google Maps and Marble.
-                            </p>
-                        </div>
-                        <div class="resume-date text-md-right">
-                            <span class="text-primary">2015</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
         </section>
         <!--====================================================
                         EDUCATION
     ======================================================-->
         <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="education">
             <div class="my-auto">
-                <div class="col-12">
-                    <h2 class="  text-center">Education</h2>
-                    <div class="mb-5 heading-border"></div>
-                </div>
+
+                <h2><u>Education</u></h2> <br>
 
                 <div class="resume-item d-flex flex-column flex-md-row mb-5">
-                    <div class="resume-content mr-auto">
+                    <div align="justify" class="resume-content mr-auto">
                         <h3 class="mb-0">National and Kapodistrian University of Athens, Department of Informatics and
                             Telecommunications</h3>
                         <div class="subheading mb-3">Master's Degree</div>
@@ -634,7 +688,7 @@ License URL: https://creativecommons.org/licenses/by/4.0/
                     </div>
                 </div>
 
-                <div class="resume-item d-flex flex-column flex-md-row mb-5">
+                <div align="justify" class="resume-item d-flex flex-column flex-md-row mb-5">
                     <div class="resume-content mr-auto">
                         <h3 class="mb-0">National and Kapodistrian University of Athens, Department of Informatics and
                             Telecommunications</h3>
@@ -647,7 +701,7 @@ License URL: https://creativecommons.org/licenses/by/4.0/
                     </div>
                 </div>
 
-                <div class="resume-item d-flex flex-column flex-md-row mb-5">
+                <div align="justify" class="resume-item d-flex flex-column flex-md-row mb-5">
                     <div class="resume-content mr-auto">
                         <h3 class="mb-0">ECDL (Syllabus Version 4.0)</h3>
                         <div class="subheading mb-3">Certificate in Databases, Concepts of IT, Word Processing,
@@ -668,273 +722,87 @@ License URL: https://creativecommons.org/licenses/by/4.0/
     ======================================================-->
         <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="skills">
             <div class="my-auto">
-                <div class="col-12">
-                    <h2 class="  text-center">Skills</h2>
-                    <div class="mb-5 heading-border"></div>
+
+                <h2><u>Skills</u></h2> <br>
+
+                <div class="resume-item d-flex flex-column flex-md-row mb-5">
+                    <div class="resume-content mr-auto">
+                        <h3 class="mb-0">Soft skills</h3>
+                        <div class="subheading mb-3">Communication, Team player, Patient, Ability to cooperate remotely</div>
+                    </div>
                 </div>
 
-                <div class="subheading mb-3 skills-heading">Soft skills</div>
-                <ul class="fa-ul mb-0">
-                    <li>
-                        <i class="fa-li fa fa-check"></i>
-                        Communication</li>
-                    <li>
-                        <i class="fa-li fa fa-check"></i>
-                        Team player</li>
-                    <li>
-                        <i class="fa-li fa fa-check"></i>
-                        Patient</li>
-                </ul>
+                <div class="resume-item d-flex flex-column flex-md-row mb-5">
+                    <div class="resume-content mr-auto">
+                        <h3 class="mb-0">Programming Languages</h3>
+                        <div class="subheading mb-3">C, C++, Java, Python</div>
+                    </div>
+                </div>
 
-                <div class="subheading mb-3 skills-heading">Programming Languages</div>
-                <ul class="list-icons">
-                    <li class="list-inline-item" style="font-size:16.5px">
-                        <i class="devicon devicon-c-plain"></i>
-                        C
-                    </li>
-                    <li class="list-inline-item" style="font-size:16.5px">
-                        <i class="devicon devicon-cplusplus-plain"></i>
-                        C++
-                    </li>
-                    <li class="list-inline-item" style="font-size:16.5px">
-                        <i class="devicon devicon-java-plain"></i>
-                        Java
-                    </li>
-                    <li class="list-inline-item" style="font-size:16.5px">
-                        <i class="devicon devicon-python-plain"></i>
-                        Python
-                    </li>
-                    <li class="list-inline-item" style="font-size:16.5px">
-                        <p><img src="img/lua.png" id="lua" style="width:16px;height:16px;">&nbsp;LUA</p>
-                    </li>
-                    <li class="list-inline-item" style="font-size:16.5px">
-                        <p><img src="img/haskell.png" id="haskell" style="width:16px;height:16px;">&nbsp;Haskell</p>
-                    </li>
-                    <li class="list-inline-item" style="font-size:16.5px">
-                        <p><img src="img/opengl.png" id="opengl" style="width:16px;height:16px;">&nbsp;OpenGL</p>
-                    </li>
-                </ul>
+                <div class="resume-item d-flex flex-column flex-md-row mb-5">
+                    <div class="resume-content mr-auto">
+                        <h3 class="mb-0">Operating Systems</h3>
+                        <div class="subheading mb-3">GNU/LINUX (including advanced distros like Arch and Manjaro), Microsoft Windows, MacOS</div>
+                    </div>
+                </div>
 
-                <div class="subheading mb-3 skills-heading">Operating Systems</div>
-                <ul class="list-icons">
-                    <li class="list-inline-item" style="font-size:16.5px">
-                        <i class="fl-archlinux"></i>
-                        Arch
-                    </li>
-                    <li class="list-inline-item" style="font-size:16.5px">
-                        <i class="fl-debian"></i>
-                        Debian
-                    </li>
-                    <li class="list-inline-item" style="font-size:16.5px">
-                        <i class="fl-fedora"></i>
-                        Fedora
-                    </li>
-                    <li class="list-inline-item" style="font-size:16.5px">
-                        <i class="fl-linuxmint" style="font-size:16.5px"></i>
-                        Linux Mint
-                    </li>
-                    <li class="list-inline-item" style="font-size:16.5px">
-                        <i class="fl-manjaro"></i>
-                        Manjaro
-                    </li>
-                    <li class="list-inline-item" style="font-size:16.5px">
-                        <i class="fl-mandriva"></i>
-                        Mandriva
-                    </li>
-                    <li class="list-inline-item" style="font-size:16.5px">
-                        <i class="fl-slackware"></i>
-                        Slackware
-                    </li>
-                    <li class="list-inline-item" style="font-size:16.5px">
-                        <i class="fl-ubuntu"></i>
-                        *buntu
-                    </li>
-                    <li class="list-inline-item" style="font-size:16.5px">
-                        <i class="fa fa-windows"></i>
-                        Microsoft Windows (95, 98, 2000, XP, Vista, 7, 8, 10)
-                    </li>
-                </ul>
+                <div class="resume-item d-flex flex-column flex-md-row mb-5">
+                    <div class="resume-content mr-auto">
+                        <h3 class="mb-0">Shell Scripting</h3>
+                        <div class="subheading mb-3">bash, zsh</div>
+                    </div>
+                </div>
 
-                <div class="subheading mb-3 skills-heading">Shell Scripting</div>
-                <ul class="list-icons">
-                    <li class="list-inline-item" style="font-size:16.5px">
-                        <i class="fa fa-terminal"></i>
-                        bash
-                    </li>
-                    <li class="list-inline-item" style="font-size:16.5px">
-                        <i class="fa fa-terminal"></i>
-                        fish
-                    </li>
-                    <li class="list-inline-item" style="font-size:16.5px">
-                        <i class="fa fa-terminal"></i>
-                        tcsh
-                    </li>
-                    <li class="list-inline-item" style="font-size:16.5px">
-                        <i class="fa fa-terminal"></i>
-                        csh
-                    </li>
-                    <li class="list-inline-item" style="font-size:16.5px">
-                        <i class="fa fa-terminal"></i>
-                        zsh
-                    </li>
-                </ul>
+                <div class="resume-item d-flex flex-column flex-md-row mb-5">
+                    <div class="resume-content mr-auto">
+                        <h3 class="mb-0">Frameworks &amp; Libraries</h3>
+                        <div class="subheading mb-3">Spring ecosystem, Bootstrap, Keras, Tensorflow, SciKit Learn, Numpy, Pandas</div>
+                    </div>
+                </div>
 
-                <div class="subheading mb-3 skills-heading">Applications Development</div>
-                <ul class="list-icons">
-                    <li class="list-inline-item" style="font-size:16.5px">
-                        <i class="devicon devicon-android-plain"></i>
-                        Android
-                    </li>
-                    <li class="list-inline-item" style="font-size:16.5px">
-                        <i class="devicon devicon-html5-plain"></i>
-                        HTML 5
-                    </li>
-                    <li class="list-inline-item" style="font-size:16.5px">
-                        <i class="devicon devicon-css3-plain"></i>
-                        CSS 3
-                    </li>
-                    <li class="list-inline-item" style="font-size:16.5px">
-                        <i class="devicon devicon-php-plain"></i>
-                        PHP
-                    </li>
-                    <li class="list-inline-item" style="font-size:16.5px">
-                        <i class="devicon devicon-javascript-plain"></i>
-                        Javascript
-                    </li>
-                    <li class="list-inline-item" style="font-size:16.5px">
-                        <i class="devicon devicon-jquery-plain"></i>
-                        jQuery
-                    </li>
-                    <li class="list-inline-item" style="font-size:16.5px">
-                        <p><img src="img/ajax.png" id="ajax" style="width:16px;height:16px;">&nbsp;Ajax</p>
-                    </li>
-                    <li class="list-inline-item" style="font-size:16.5px">
-                        <i class="devicon devicon-bootstrap-plain"></i>
-                        Bootstrap
-                    </li>
-                    <li class="list-inline-item" style="font-size:16.5px">
-                        <i class="devicon devicon-npm-original-wordmark"></i>
-                        npm
-                    </li>
-                    <li class="list-inline-item" style="font-size:16.5px">
-                        <i class="devicon devicon-bower-plain"></i>
-                        bower
-                    </li>
-                    <li class="list-inline-item" style="font-size:16.5px">
-                        <i class="devicon devicon-gradle-plain"></i>
-                        Gradle
-                    </li>
-                    <li class="list-inline-item" style="font-size:16.5px">
-                        <i class="devicon devicon-nodejs-plain"></i>
-                        NodeJS
-                    </li>
-                    <li class="list-inline-item" style="font-size:16.5px">
-                        <i class="devicon devicon-react-original"></i>
-                        React
-                    </li>
-                    <li class="list-inline-item" style="font-size:16.5px">
-                        <p><img src="img/redux.png" id="redux" style="width:16px;height:16px;">&nbsp;Redux</p>
-                    </li>
-                </ul>
+                <div class="resume-item d-flex flex-column flex-md-row mb-5">
+                    <div class="resume-content mr-auto">
+                        <h3 class="mb-0">Style Sheet and Document Languages</h3>
+                        <div class="subheading mb-3">HTML5, CSS3, XML, SOAP, RDF, OWL</div>
+                    </div>
+                </div>
 
-                <div class="subheading mb-3 skills-heading">Server management &amp; databases</div>
-                <ul class="list-icons">
-                    <li class="list-inline-item" style="font-size:16.5px">
-                        <i class="devicon devicon-tomcat-line"></i>
-                        Apache Tomcat
-                    </li>
-                    <li class="list-inline-item" style="font-size:16.5px">
-                        <i class="devicon devicon-apache-line"></i>
-                        Apache HTTP Server/XAMPP
-                    </li>
-                    <li class="list-inline-item" style="font-size:16.5px">
-                        <i class="devicon devicon-mysql-plain"></i>
-                        SQL
-                    </li>
-                    <li class="list-inline-item" style="font-size:16.5px">
-                        <i class="devicon devicon-postgresql-plain"></i>
-                        PostgreSQL
-                    </li>
-                    <li class="list-inline-item" style="font-size:16.5px">
-                        <i class="devicon devicon-redis-plain"></i>
-                        Redis
-                    </li>
-                </ul>
+                <div class="resume-item d-flex flex-column flex-md-row mb-5">
+                    <div class="resume-content mr-auto">
+                        <h3 class="mb-0">Servers &amp; databases</h3>
+                        <div class="subheading mb-3">Apache Tomcat, Wildfly/Jboss, Glassfish, 
+                            Apache HTTP Server/XAMPP, PHPMyAdmin, MySQL Workbench, pgAdmin, SQL, Oracle, PostgreSQL/PostGIS, Redis, (Geo/st)SPARQL</div>
+                    </div>
+                </div>
 
-                <div class="subheading mb-3 skills-heading">Integrated Desktop Environments</div>
-                <ul class="list-icons">
-                    <li class="list-inline-item" style="font-size:16.5px">
-                        <i class="devicon devicon-intellij-plain"></i>
-                        Intellij
-                    </li>
-                    <li class="list-inline-item" style="font-size:16.5px">
-                        <i class="devicon devicon-pycharm-plain"></i>
-                        Pycharm
-                    </li>
-                    <li class="list-inline-item" style="font-size:16.5px">
-                        <i class="devicon devicon-webstorm-plain"></i>
-                        WebStorm
-                    </li>
-                    <li class="list-inline-item" style="font-size:16.5px">
-                        <i class="devicon devicon-phpstorm-plain"></i>
-                        PHPStorm
-                    </li>
-                    <li class="list-inline-item" style="font-size:16.5px">
-                        <i class="devicon devicon-visualstudio-plain"></i>
-                        Visual Studio Code
-                    </li>
-                </ul>
+                <div class="resume-item d-flex flex-column flex-md-row mb-5">
+                    <div class="resume-content mr-auto">
+                        <h3 class="mb-0">Integrated Desktop Environments</h3>
+                        <div class="subheading mb-3">Intellij, Android Studio, PyCharm, WebStorm, PHPStorm, VS Code, Netbeans</div>
+                    </div>
+                </div>
 
-                <div class="subheading mb-3 skills-heading">Geospatial Systems</div>
-                <ul class="list-icons">
-                    <li class="list-inline-item" style="font-size:16.5px">
-                        <p><img src="img/sextant.png" id="sextant" style="width:16px;height:16px;">&nbsp;Sextant</p>
-                    </li>
-                    <li class="list-inline-item" style="font-size:16.5px">
-                        <p><img src="img/strabon.png" id="strabon" style="width:16px;height:16px;">&nbsp;Strabon</p>
-                    </li>
-                </ul>
+                <div class="resume-item d-flex flex-column flex-md-row mb-5">
+                    <div class="resume-content mr-auto">
+                        <h3 class="mb-0">Geospatial Systems</h3>
+                        <div class="subheading mb-3">Sextant, Strabon</div>
+                    </div>
+                </div>
 
-                <div class="subheading mb-3 skills-heading">Version Control</div>
-                <ul class="list-icons">
-                    <li class="list-inline-item" style="font-size:16.5px">
-                        <i class="devicon devicon-bitbucket-original"></i>
-                        Bitbucket
-                    </li>
-                    <li class="list-inline-item" style="font-size:16.5px">
-                        <i class="devicon devicon-git-plain"></i>
-                        Git
-                    </li>
-                    <li class="list-inline-item" style="font-size:16.5px">
-                        <i class="devicon devicon-github-original"></i>
-                        GitHub
-                    </li>
-                    <li class="list-inline-item" style="font-size:16.5px">
-                        <i class="devicon devicon-gitlab-plain"></i>
-                        GitLab
-                    </li>
-                </ul>    
+                <div class="resume-item d-flex flex-column flex-md-row mb-5">
+                    <div class="resume-content mr-auto">
+                        <h3 class="mb-0">Version Control</h3>
+                        <div class="subheading mb-3">Mercurial, Git, CVS, GitHub, GitLab, Bitbucket</div>
+                    </div>
+                </div>
 
-                <div class="subheading mb-3 skills-heading">General</div>
-                <ul class="list-icons">
-                    <li class="list-inline-item" style="font-size:16.5px">
-                        <p><img src="img/latex.png" id="latex" style="width:16px;height:16px;">&nbsp;LaTeX</p>
-                    </li>
-                    <li class="list-inline-item" style="font-size:16.5px">
-                        <p><img src="img/icons8-office-365-60.png" id="msoffice" style="width:16px;height:16px;">&nbsp;Microsoft
-                            office</p>
-                    </li>
-                    <li class="list-inline-item" style="font-size:16.5px">
-                        <p><img src="img/presentation-64x64.png" id="presentations" style="width:16px;height:16px;">&nbsp;Presentations</p>
-                    </li>
-                    <li class="list-inline-item" style="font-size:16.5px">
-                        <p><img src="img/matlab.png" id="matlab" style="width:16px;height:16px;">&nbsp;Matlab</p>
-                    </li>
-                    <li class="list-inline-item" style="font-size:16.5px">
-                        <i class="devicon devicon-gimp-plain"></i>
-                        Gimp
-                    </li>
-                </ul>
+                <div class="resume-item d-flex flex-column flex-md-row mb-5">
+                    <div class="resume-content mr-auto">
+                        <h3 class="mb-0">General</h3>
+                        <div class="subheading mb-3">Aspect Oriented Programming, Design patterns, LaTeX, Microsoft Office Suite, Presentations, Matlab, Gimp</div>
+                    </div>
+                </div>
+                
             </div>
         </section>
 
@@ -943,10 +811,8 @@ License URL: https://creativecommons.org/licenses/by/4.0/
     ======================================================-->
         <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="distinctions">
             <div class="my-auto">
-                <div class="col-12">
-                    <h2 class="  text-center">Distinctions</h2>
-                    <div class="mb-5 heading-border"></div>
-                </div>
+
+                <h2><u>Distinctions</u></h2> <br>
 
                 <div class="resume-item d-flex flex-column flex-md-row mb-5">
                     <div class="resume-content mr-auto">
@@ -974,254 +840,126 @@ License URL: https://creativecommons.org/licenses/by/4.0/
         <!--====================================================
                         RESEARCH INTERESTS
     ======================================================-->
-        <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="research_interests">
-            <div class="my-auto">
-                <div class="col-12">
-                    <h2 class="  text-center">Research Interests</h2>
-                    <div class="mb-5 heading-border"></div>
-                </div>
+    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="research_interests">
+        <div class="my-auto">
 
-                <div class="resume-item d-flex flex-column flex-md-row mb-5">
-                    <div class="resume-content mr-auto">
-                        <h3 class="mb-0">Deep Learning for NLP</h3>
-                    </div>
-                </div>
+            <h2><u>Research Interests</u></h2> <br>
 
-                <div class="resume-item d-flex flex-column flex-md-row mb-5">
-                    <div class="resume-content mr-auto">
-                        <h3 class="mb-0">Legal Text Analytics</h3>
-                        <div class="subheading mb-3">Legislation Publishing, Contract Analysis</div>
-                    </div>
+            <div class="resume-item d-flex flex-column flex-md-row mb-5">
+                <div class="resume-content mr-auto">
+                    <h3 class="mb-0">Deep Learning for NLP</h3>
                 </div>
-
-                <div class="resume-item d-flex flex-column flex-md-row mb-5">
-                    <div class="resume-content mr-auto">
-                        <h3 class="mb-0">Information Extraction</h3>
-                        <div class="subheading mb-3">Named Entity Recognition and Linking</div>
-                    </div>
-                </div>
-
-                <div class="resume-item d-flex flex-column flex-md-row mb-5">
-                    <div class="resume-content mr-auto">
-                        <h3 class="mb-0">Text Segmentation
-                        </h3>
-                        <div class="subheading mb-3">Legal Text Segmentation, Zoning, Sentence Boundary
-                            Detection</div>
-                    </div>
-                </div>
-
-                <div class="resume-item d-flex flex-column flex-md-row mb-5">
-                    <div class="resume-content mr-auto">
-                        <h3 class="mb-0">Text Classification
-                        </h3>
-                        <div class="subheading mb-3">Document/Sentence Classification</div>
-                    </div>
-                </div>
-
-                <div class="resume-item d-flex flex-column flex-md-row mb-5">
-                    <div class="resume-content mr-auto">
-                        <h3 class="mb-0">Self-supervised Document Classification
-                        </h3>
-                    </div>
-                </div>
-
-                <div class="resume-item d-flex flex-column flex-md-row mb-5">
-                    <div class="resume-content mr-auto">
-                        <h3 class="mb-0">Data Augmentation
-                        </h3>
-                    </div>
-                </div>
-
-                <div class="resume-item d-flex flex-column flex-md-row mb-5">
-                    <div class="resume-content mr-auto">
-                        <h3 class="mb-0">Legal Knowledge Representation
-                        </h3>
-                        <div class="subheading mb-3">Legislation, Contracts</div>
-                    </div>
-                </div>
-
-                <div class="resume-item d-flex flex-column flex-md-row mb-5">
-                    <div class="resume-content mr-auto">
-                        <h3 class="mb-0">E-Government – Linked Open Data
-                        </h3>
-                    </div>
-                </div>
-
             </div>
-        </section>
+
+            <div class="resume-item d-flex flex-column flex-md-row mb-5">
+                <div class="resume-content mr-auto">
+                    <h3 class="mb-0">Legal Text Analytics</h3>
+                    <div class="subheading mb-3">Legislation Publishing, Contract Analysis</div>
+                </div>
+            </div>
+
+            <div class="resume-item d-flex flex-column flex-md-row mb-5">
+                <div class="resume-content mr-auto">
+                    <h3 class="mb-0">Information Extraction</h3>
+                    <div class="subheading mb-3">Named Entity Recognition and Linking</div>
+                </div>
+            </div>
+
+            <div class="resume-item d-flex flex-column flex-md-row mb-5">
+                <div class="resume-content mr-auto">
+                    <h3 class="mb-0">Text Classification
+                    </h3>
+                    <div class="subheading mb-3">Document/Sentence Classification</div>
+                </div>
+            </div>
+
+            <div class="resume-item d-flex flex-column flex-md-row mb-5">
+                <div class="resume-content mr-auto">
+                    <h3 class="mb-0">Data Augmentation
+                    </h3>
+                </div>
+            </div>
+
+            <div class="resume-item d-flex flex-column flex-md-row mb-5">
+                <div class="resume-content mr-auto">
+                    <h3 class="mb-0">Legal Knowledge Representation
+                    </h3>
+                    <div class="subheading mb-3">Legislation, Contracts</div>
+                </div>
+            </div>
+
+            <div class="resume-item d-flex flex-column flex-md-row mb-5">
+                <div class="resume-content mr-auto">
+                    <h3 class="mb-0">E-Government – Linked Open Data
+                    </h3>
+                </div>
+            </div>
+
+        </div>
+    </section>
 
         <!--====================================================
                         PUBLICATIONS
     ======================================================-->
         <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="publications">
             <div class="my-auto">
-                <div class="col-12">
-                    <h2 class="  text-center">Publications</h2>
-                    <div class="mb-5 heading-border"></div>
-                </div>
+                
+                <h2><u>Publications</u></h2><br>
 
                 <div class="resume-item d-flex flex-column flex-md-row mb-5">
-                    <div class="resume-content mr-auto">
-                        <h3 class="mb-0"><b>T. Beris, I. Angelidis, I. Chalkidis, C. Nikolaou, C. Papaloukas, P. Soursos and M. Koubarakis.</b><i> <span style="color: #BD5D38">Towards a Decentralized, Trusted, Intelligent and Linked Public Sector. A Report from the Greek Trenches</span>.</i></h3>
-                        <div class="subheading mb-3">LDOW/LDDL workshop, The Web Conference (WWW 2019),
+                    <div align="justify" class="resume-content mr-auto">
+                        <h3 class="mb-0">T. Beris, I. Angelidis, I. Chalkidis, C. Nikolaou, C. Papaloukas, P. Soursos and M. Koubarakis.</h3>
+                        <h3 class="subheading mb-0"><i> Towards a Decentralized, Trusted, Intelligent and Linked Public Sector. A Report from the Greek Trenches.</i></h3>
+                        <h3 class="subheading mb-0">LDOW/LDDL workshop, The Web Conference (WWW 2019),
                             San Francisco, CA, USA, 13 May, 2019.[<a href="https://dl.acm.org/citation.cfm?doid=3308560.3317077">PUB</a>][<a
                                 href="documents/Publications/2019/www19companion-206.pdf">E-PRINT</a>][<a target="_blank"
-                                href="documents/Publications/2019/3317077.bib" download="3317077.bib">BIB</a>]</div>
+                                href="documents/Publications/2019/3317077.bib" download="3317077.bib">BIB</a>]</h3>
                     </div>
                 </div>
 
                 <div class="resume-item d-flex flex-column flex-md-row mb-5">
-                    <div class="resume-content mr-auto">
-                        <h3 class="mb-0"><b>I. Angelidis, I. Chalkidis, C. Nikolaou, P.
-                                Soursos
-                                and M. Koubarakis.</b><i> <span style="color: #BD5D38">Nomothesia: A
-                                    Linked Data
-                                    Platform for Greek Legislation</span>.</i></h3>
-                        <div class="subheading mb-3">MIREL workshop, Luxembourg Logic for AI Summit (LuxLogAI
+                    <div align="justify" class="resume-content mr-auto">
+                        <h3 class="mb-0">I. Angelidis, I. Chalkidis, C. Nikolaou, P. Soursos and M. Koubarakis.</h3>
+                        <h3 class="subheading mb-0"><i> Nomothesia: A Linked Data Platform for Greek Legislation.</i></h3>
+                        <h3 class="subheading mb-3">MIREL workshop, Luxembourg Logic for AI Summit (LuxLogAI
                             2018),
                             Luxembourg, 17 September, 2018.[<a href="https://ora.ox.ac.uk/objects/uuid:b19c1428-49db-402b-8afd-b8cf588e147d">PUB</a>][<a
                                 href="documents/Publications/2018/nomothesia-linked-data.pdf">E-PRINT</a>][<a
-                                href="https://ora.ox.ac.uk/objects/uuid:b19c1428-49db-402b-8afd-b8cf588e147d/export_record.bibtex">BIB</a>]</div>
+                                href="https://ora.ox.ac.uk/objects/uuid:b19c1428-49db-402b-8afd-b8cf588e147d/export_record.bibtex">BIB</a>]</h3>
                     </div>
                 </div>
 
                 <div class="resume-item d-flex flex-column flex-md-row mb-5">
-                    <div class="resume-content mr-auto">
-                        <h3 class="mb-0"><b>I. Angelidis, I. Chalkidis and M. Koubarakis.</b><i><span style="color: #BD5D38">Named
-                                    Entity Recognition, Linking and Generation for Greek Legislation</span>.</i></h3>
-                        <div class="subheading mb-3">The 31st international conference on Legal Knowledge and
+                    <div align="justify" class="resume-content mr-auto">
+                        <h3 class="mb-0">I. Angelidis, I. Chalkidis and M. Koubarakis.</h3>
+                        <h3 class="subheading mb-0"><i>Named Entity Recognition, Linking and Generation for Greek Legislation.</i></h3>
+                        <h3 class="subheading mb-3">The 31st international conference on Legal Knowledge and
                             Information Systems (JURIX 2018). Groningen, The Netherlands, 12-14 December‚
                             2018.[<a href="https://doi.org/10.3233/978-1-61499-935-5-1">PUB</a>][<a href="documents/Publications/2018/jurix2018.pdf">E-PRINT</a>][<a
-                                href="https://dblp.uni-trier.de/rec/bib1/conf/jurix/AngelidisCK18.bib">BIB</a>]</div>
+                                href="https://dblp.uni-trier.de/rec/bib1/conf/jurix/AngelidisCK18.bib">BIB</a>]</h3>
                     </div>
                 </div>
 
                 <div class="resume-item d-flex flex-column flex-md-row mb-5">
-                    <div class="resume-content mr-auto">
-                        <h3 class="mb-0"><b>D. Punjani, K. Singh, A. Both, M. Koubarakis, I. Angelidis, K.
-                                Bereta, T.
-                                Beris, D. Bilidas, T. Ioannidis, N. Karalis, C. Lange, D. Pantazi, C.
-                                Papaloukas and G.
-                                Stamoulis.</b><i><span style="color: #BD5D38">Template-Based Question Answering
-                                    over
-                                    Linked Geospatial Data</span>.</i></h3>
-                        <div class="subheading mb-3">Geographic Information Retrieval (GIR 2018) workshop.
+                    <div align="justify" class="resume-content mr-auto">
+                        <h3 class="mb-0">D. Punjani, K. Singh, A. Both, M. Koubarakis, I. Angelidis, K. Bereta, T. Beris, D. Bilidas, 
+                            T. Ioannidis, N. Karalis, C. Lange, D. Pantazi, C. Papaloukas and G. Stamoulis.</h3>
+                        <h3 class="subheading mb-0"><i>Template-Based Question Answering over Linked Geospatial Data.</i></h3>
+                        <h3 class="subheading mb-3">Geographic Information Retrieval (GIR 2018) workshop.
                             Collocated with ACM SIGSPATIAL. Seattle, USA, 6 November, 2018.[<a href="https://doi.org/10.1145/3281354.3281362">PUB</a>][<a
                                 href="documents/Publications/2018/template-based-GeoQA.pdf">E-PRINT</a>][<a
-                                href="https://dl.acm.org/downformats.cfm?id=3281362&parent_id=3281354&expformat=bibtex">BIB</a>]</div>
+                                href="https://dl.acm.org/downformats.cfm?id=3281362&parent_id=3281354&expformat=bibtex">BIB</a>]</h3>
                     </div>
                 </div>
 
                 <div class="resume-item d-flex flex-column flex-md-row mb-5">
-                    <div class="resume-content mr-auto">
-                        <h3 class="mb-0"><b>P. Liakos, I. Angelidis and A. Delis.</b><i><span style="color: #BD5D38">Cooperative
-                                    Routing and Scheduling of an Electric Vehicle Fleet Managing Dynamic Customer
-                                    Requests</span>.</i></h3>
-                        <div class="subheading mb-3">Proceedings of the International Conference on Cooperative
+                    <div align="justify" class="resume-content mr-auto">
+                        <h3 class="mb-0">P. Liakos, I. Angelidis and A. Delis.</h3>
+                        <h3 class="subheading mb-0"><i>Cooperative Routing and Scheduling of an Electric Vehicle Fleet Managing Dynamic Customer Requests.</i></h3>
+                        <h3 class="subheading mb-3">Proceedings of the International Conference on Cooperative
                             Information
                             Systems (CoopIS), Rhodes, 28 October, 2016.[<a href="https://link.springer.com/chapter/10.1007%2F978-3-319-48472-3_7">PUB</a>][<a
-                                href="documents/Publications/2016/LAD-Coopis16.pdf">E-PRINT</a>][<a href="https://dblp.uni-trier.de/rec/bib1/conf/otm/LiakosAD16.bib">BIB</a>]</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!--====================================================
-                        ADDITIONAL ACADEMIC ACTIVITIES
-    ======================================================-->
-
-        <section class="resume-section p-3 p-lg-5 " id="academic_activities">
-            <div class="row my-auto">
-                <div class="col-12">
-                    <h2 class="  text-center">Additional Academic Activities</h2>
-                    <div class="mb-5 heading-border"></div>
-                </div>
-                <div class="main-experience" id="experience-box">
-                    <div class="experience">
-                        <div class="experience-icon"></div>
-                        <div class="experience-content">
-                            <span class="date wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.4s">Fall
-                                2019</span>
-                            <div class="inner-content wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="1s">
-                                <h5 class="title">Teaching Assistant</h5>
-                                <p align="justify">Artificial Intelligence, National and Kapodistrian University of Athens, Department
-                                    of Informatics and Telecommunications.</p>
-                            </div>
-                        </div>
-                    </div>
-                <div class="main-experience" id="experience-box">
-                    <div class="experience">
-                        <div class="experience-icon"></div>
-                        <div class="experience-content">
-                            <span class="date wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.4s">Fall
-                                2018</span>
-                            <div class="inner-content wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="1s">
-                                <h5 class="title">Teaching Assistant</h5>
-                                <p align="justify">Artificial Intelligence, National and Kapodistrian University of Athens, Department
-                                    of Informatics and Telecommunications.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="experience">
-                        <div class="experience-icon"></div>
-                        <div class="experience-content">
-                            <span class="date wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.4s">Fall
-                                2017</span>
-                            <div class="inner-content wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="1s">
-                                <h5 class="title">Teaching Assistant</h5>
-                                <p align="justify">Artificial Intelligence, National and Kapodistrian University of Athens, Department
-                                    of Informatics and Telecommunications.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="experience">
-                        <div class="experience-icon"></div>
-                        <div class="experience-content">
-                            <span class="date wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.4s">Fall
-                                2016</span>
-                            <div class="inner-content wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="1s">
-                                <h5 class="title">Teaching Assistant</h5>
-                                <p align="justify">Operating Systems, National and Kapodistrian University of Athens, Department of
-                                    Informatics and Telecommunications.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="experience">
-                        <div class="experience-icon"></div>
-                        <div class="experience-content">
-                            <span class="date wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.4s">Fall
-                                2015</span>
-                            <div class="inner-content wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="1s">
-                                <h5 class="title">Teaching Assistant</h5>
-                                <p align="justify">Object Oriented Programming Lab (undergrad lab for the corresponding course),
-                                    National and
-                                    Kapodistrian University of Athens, Department of Informatics and
-                                    Telecommunications.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="experience">
-                        <div class="experience-icon"></div>
-                        <div class="experience-content">
-                            <span class="date wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.4s">2015</span>
-                            <div class="inner-content wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="1s">
-                                <h5 class="title">Supervision and development of educational material</h5>
-                                <p align="justify">Algorithms and Complexity, National and Kapodistrian University of Athens,
-                                    Department of Informatics and Telecommunications.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="experience">
-                        <div class="experience-icon"></div>
-                        <div class="experience-content">
-                            <span class="date wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.4s">2015</span>
-                            <div class="inner-content wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="1s">
-                                <h5 class="title">Supervision and development of educational material</h5>
-                                <p align="justify">Operations Research, National and Kapodistrian University of Athens, Department of
-                                    Informatics and Telecommunications.</p>
-                            </div>
-                        </div>
+                                href="documents/Publications/2016/LAD-Coopis16.pdf">E-PRINT</a>][<a href="https://dblp.uni-trier.de/rec/bib1/conf/otm/LiakosAD16.bib">BIB</a>]</h3>
                     </div>
                 </div>
             </div>
@@ -1232,10 +970,9 @@ License URL: https://creativecommons.org/licenses/by/4.0/
     ======================================================-->
         <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="interests">
             <div class="my-auto">
-                <div class="col-12">
-                    <h2 class="  text-center">Interests</h2>
-                    <div class="mb-5 heading-border"></div>
-                </div>
+
+                <h2><u>Interests</u></h2> <br>
+
                 <p align="justify">Apart from being a data scientist, I thoroughly enjoy travelling and visiting archaeological
                     sites.</p>
 
@@ -1261,38 +998,47 @@ License URL: https://creativecommons.org/licenses/by/4.0/
             </div>
         </section>
 
+    </main>
+
         <footer class="footer">
-            <div class="container text-center">
-                <small>Copyright <i class="fa fa-fw fa-copyright fa-fw"></i> Iosif Angelidis 2018-2019</small>
+            <div id="footer-text" class="container text-center">
+                
             </div>
         </footer>
 
+        <div class="back-top" style="display: block;">
+            <a href="#"><i class="fa fa-angle-up"></i></a>
+        </div>
+
         <!-- Global javascript -->
-        <script src="js/jquery/jquery.min.js"></script>
+        
         <script src="js/bootstrap/bootstrap.bundle.min.js"></script>
-        <script src="js/jquery-easing/jquery.easing.min.js"></script>
         <script src="js/wow.min.js"></script>
         <script src="js/custom.js"></script>
-        <script src="js/firstImpression.js/firstImpression.min.js"></script>
         <script>
-            $(document).ready(function () {
-                $('[data-toggle="tooltip"]').tooltip();
-                var wow = new WOW(
-                    {
-                        boxClass: 'wow',      // animated element css class (default is wow)
-                        animateClass: 'animated', // animation css class (default is animated)
-                        offset: 0,          // distance to the element when triggering the animation (default is 0)
-                        mobile: false,       // trigger animations on mobile devices (default is true)
-                        live: true,       // act on asynchronously loaded content (default is true)
-                        callback: function (box) {
-                            // the callback is fired every time an animation is started
-                            // the argument that is passed in is the DOM node being animated
-                        },
-                        scrollContainer: null // optional scroll container selector, otherwise use window
-                    }
-                );
-                wow.init();
-            });
+            document.getElementById("footer-text").innerHTML = "<small id=\"footer-text\">Copyright <i class=\"fa fa-fw fa-copyright fa-fw\"></i>Iosif Angelidis 2018-" + new Date().getFullYear() + "</small>";
+        </script>
+        <script src="js/particles.js"></script>
+        <script src="js/particles-settings.js"></script>
+        <script>
+            renderParticles('particles-js');
+        </script>
+        <script>
+            !(function($) {
+                "use strict";
+    
+                // Hero typed
+                if ($('#typed').length) {
+                    var typed_strings = $("#typed").data('typed-items');
+                    typed_strings = typed_strings.split(',')
+                    new Typed('#typed', {
+                    strings: typed_strings,
+                    loop: true,
+                    typeSpeed: 20,
+                    backSpeed: 40,
+                    backDelay: 4000
+                    });
+                }})(jQuery);
         </script>
     </div>
 </body>

@@ -1,4 +1,0 @@
- A2, Landscape, 100%, ALL pages EXCEPT Projects -> CV1.pdf
- A1, portrait, 100%, ONLY Projects -> CV2.pdf
-gs -o CV_full_cropped.pdf -sDEVICE=pdfwrite -c "[/CropBox [-1 1188 1685 2384]" -c " /PAGES pdfmark" -f CV1.pdf
-pdftk A=CV_full_cropped.pdf B=CV2.pdf cat A1-2 B1 A3-end output CV_full.pdf

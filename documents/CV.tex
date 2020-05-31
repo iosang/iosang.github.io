@@ -34,6 +34,14 @@
 \renewcommand{\headrulewidth}{0.5pt}
 \renewcommand{\footrulewidth}{0.5pt}
 
+\usepackage{tikz}
+\newcommand{\roundpic}[4][]{
+  \tikz\node [circle, minimum width = #2,
+    path picture = {
+      \node [#1] at (path picture bounding box.center) {
+        \includegraphics[width=#3]{#4}};
+    }] {};}
+
 \usepackage{multicol}
 
 \pagestyle{fancy}
@@ -44,7 +52,7 @@
 \begin{document}
 
 \begin{multicols}{2} 
-\includegraphics[width=5cm]{IMG_20190204_195706_ex.jpg}%
+\roundpic{5cm}{5cm}{IMG_20190204_195706_ex.jpg}
 \columnbreak
 
 \begin{flushright}
@@ -54,36 +62,51 @@
 
 \textlatin{Birth}: \textlatin{June 16, 1993}
 
-\textlatin{Address}: \textlatin{University of Athens, 157 84, Ilissia, Athens, Greece}
+\textlatin{Location}: \textlatin{Athens, Greece}
 
 \textlatin{Mobile}: \textlatin{\href{tel:306947747843}{+30 694 7747 843}}
 
 \textlatin{Phone}: \textlatin{\href{tel:302108843227}{+30 210 884 3227}}
 
-\textlatin{e-mail}: \textlatin{\href{mailto:iosang@di.uoa.gr}{iosang@di.uoa.gr}}
+\textlatin{e-mail}: \textlatin{\href{mailto:iosif.angelidis@gmail.com}{iosif.angelidis@gmail.com}}
 
 \end{flushright}
 
 \end{multicols}
 
-\subsection*{Further Contact Means}
-\addcontentsline{toc}{subsection}{Further Contact Means}
+\subsection*{Contact}
+\addcontentsline{toc}{subsection}{Contact}
 
+\begin{multicols}{9}
 \begin{itemize}
 
-\item \href{https://iosang.github.io}{Personal Website}
+\item[]\href{https://iosang.github.io}{\includegraphics[scale=0.08]{assets/home.pdf}}
 
-\item \href{https://www.facebook.com/metimdjai}{Facebook}
+\item[]\href{https://www.facebook.com/metimdjai}{\includegraphics[scale=0.2]{assets/facebook-original.pdf}}
 
-\item \href{https://www.linkedin.com/in/iosif-angelidis/}{LinkedIn}
+\item[]\href{https://www.linkedin.com/in/iosif-angelidis/}{\includegraphics[scale=0.2]{assets/linkedin-original.pdf}}
 
-\item \href{https://github.com/metimdjai}{GitHub}
+\item[]\href{https://twitter.com/metimdjai}{\includegraphics[scale=0.2]{assets/twitter-original.pdf}}
 
-\item \href{https://gitlab.com/metimdjai}{GitLab}
+\item[]\href{https://github.com/iosang}{\includegraphics[scale=0.2]{assets/github-original.pdf}}
 
-\item V-card: \includegraphics[scale=0.5]{qr.png}%
+\item[]\href{https://gitlab.com/metimdjai}{\includegraphics[scale=0.2]{assets/gitlab-original.pdf}}
+
+\item[]\href{https://bitbucket.org/Metimdjai/}{\includegraphics[scale=0.2]{assets/bitbucket-original.pdf}}
+
+\item[]\href{https://dblp.uni-trier.de/pers/hd/a/Angelidis:Iosif}{\includegraphics[scale=0.15]{assets/dblp.pdf}}
+
+\item[]\href{https://scholar.google.gr/citations?user=r8jJLocAAAAJ&hl=en}{\includegraphics[scale=0.3]{assets/icons8-google-scholar.pdf}}
 
 \end{itemize}
+\end{multicols}
+
+\vspace{30mm}
+
+\begin{figure}[hbt!]
+	\centering
+	\includegraphics[scale=0.5]{qrcode.png}%
+\end{figure}
 
 \newpage
 
@@ -91,28 +114,19 @@
 \addcontentsline{toc}{subsection}{Short summary}
 
 \begin{sloppypar}
-	Iosif Angelidis was born in Cholargos, Attica, on 16/06/1993. He is a graduate of the Department
+	Iosif Angelidis is a graduate of the Department
 	of Informatics \& Telecommunications of the National and Kapodistrian University of Athens, his undergraduate 
 	dissertation being in the area of ``Theoretical Informatics'', while he has completed his post-graduate studies in ``Information and Data
-	Management''. He is a member of Management of Data and Information Knowledge Group
-	(\href{http://www.madgik.di.uoa.gr}{MADgIK}) and the \href{http://ai.di.uoa.gr/}{AI group} of the University of Athens.
+	Management''. He became a member of Management of Data and Information Knowledge Group
+	(\href{http://www.madgik.di.uoa.gr}{MADgIK}) and the \href{http://ai.di.uoa.gr/}{AI group} of the University of Athens. He has worked as a researcher in the same deparment, focusing on various aspects of knowledge harvesting, representation, reasoning and analytics.
 \end{sloppypar}
 
 \begin{sloppypar}
-	In the context of his MSc thesis, ``Named Entity Recognition and Linking in Greek Legislation'',
-	under the supervision of professor Manolis Koubarakis and PhD Candidate Ilias Chalkidis, he
-	developed and maintained a Named Entity Recognizer which recognizes and extracts persons,
-	organizations, geo-political entities, legal references, public documents and unofficial
-	geographical landmarks found in the Government Gazette by utilizing Neural Networks and Deep Learning
-	technologies. These entities are being encoded as RDF data based on a Semantic Web ontology and
-	then interlinked with other open public datasets (Greek Administrative Geography, Greek
-	DBpedia Politicians, EUR-Lex) with Silk.
+	He is passionate about Java backend development and RESTful APIs, emphasizing documenting the final product, while he tries to further optimize implementations (when a deadline allows it) by employing a strong theoretical background in algorithms and the internal workings of languages, databases and computer memory. Having experience in data science, he is also capable of providing efficient solutions in data manipulation and task automation via Python scripts. Always eager to learn and happy to assist peers in tackling any kind of hurdle in software development. 
 \end{sloppypar}
 
 \begin{sloppypar}
-	He has been a researcher, further developing, optimizing and maintaining the Named Entity Recognizer
-	component he developed for the project \href{http://legislation.di.uoa.gr}{Nomothesi@} API, still contributing to the project when time allows. Also, he has worked as a researcher in Choronomothesia, 
-	a parallel project with the goal of extracting geospatial information and coordinates from tables of legal documents of the National Printing Office of Greece.
+	Currently, he is seeking employment, aiming to participate in interesting projects to expand his horizons and learn new technologies and workflows. \textbf{Military obligations fulfilled by July 10, 2020.}
 \end{sloppypar}
 
 \subsection*{Working experience}
@@ -120,42 +134,9 @@
 
 \begin{itemize}
 
-\item Jul 1 2017 - Oct 7, 2019: Researcher:
-	\begin{itemize}
+	\item 2017 - 2019: Researcher/software developer in the projects ``\href{https://cordis.europa.eu/project/id/730124}{Copernicus App Lab}'' (Horizon2020, EU Research and Innovation Programme), ``\href{http://legislation.di.uoa.gr}{Nomothesi@}'', ``Choronomothesia''. 
 
-	\item Developing, optimizing and maintaining the Named Entity Recognizer component of ``\href{http://legislation.di.uoa.gr}{Nomothesi@}''.
-
-	\item Developer and researcher in ``Choronomothesia'', another project parallel to ``\href{http://legislation.di.uoa.gr}{Nomothesi@}'' with the goal 
-	of extracting geospatial information and coordinates from tables of legal documents of the National Printing Office of Greece.
-
-	\item Focus on various aspects of knowledge harvesting, representation, reasoning and analytics.
-
-	\item Information extraction, web crawling, deep neural networks and machine learning, natural language processing.
-
-	\item Member of Management of Data and Information Knowledge Group (\href{http://www.madgik.di.uoa.gr}{MADgIK}) and the \href{http://kr.di.uoa.gr/}{AI group} of the University of Athens.
-
-	\end{itemize}
-
-\item Jul 1, 2017 - Oct 31, 2017: Researcher/software developer in the project ``Copernicus App Lab'' (Horizon2020, EU Research and Innovation Programme).
-
-\end{itemize}
-
-\subsection*{Additional academic activities}
-\addcontentsline{toc}{subsection}{Additional academic activities}
-
-\begin{itemize}
-
-\item Fall 2019: Teaching assistant in undergrad ``Artificial Intelligence'' course, National and Kapodistrian University of Athens, Department of Informatics and Telecommunications.
-
-\item Fall 2018: Teaching assistant in undergrad ``Artificial Intelligence'' course, National and Kapodistrian University of Athens, Department of Informatics and Telecommunications.
-
-\item Fall 2017: Teaching assistant in undergrad ``Artificial Intelligence'' course, National and Kapodistrian University of Athens, Department of Informatics and Telecommunications.
-
-\item Fall 2016: Teaching assistant in undergrad ``Operating Systems'' course, National and Kapodistrian University of Athens, Department of Informatics and Telecommunications.
-
-\item Fall 2015: Teaching assistant in Object Oriented Programming Lab for ``Object Oriented Programming'' undergrad course, National and Kapodistrian University of Athens, Department of Informatics and Telecommunications.
-
-\item 2015: Supervision/development of educational material for ``Algorithms and Complexity'' and ``Operations Research'' undergrad courses, National and Kapodistrian University of Athens, Department of Informatics and Telecommunications.
+	\item 2015 - 2019: Teaching Assistant in the National and Kapodistrian University of Athens, Department of Informatics and Telecommunications, in: Artificial Intelligence, Object Oriented Programming Lab for Object Oriented Programming. Supervision/development of educational material for Algorithms and Complexity and Operations Research undergrad courses.
 
 \end{itemize}
 
@@ -164,12 +145,12 @@
 
 \begin{itemize}
 
-\item Active developer of the platform \href{http://legislation.di.uoa.gr/}{Nomothesi@}, which functions as a portal of greek legislative text from all legal documents of the National Printing House. We extract legal and geospatial as well as textual references to entities, digitalizing this data as Semantic Web data by utilizing structured/semi-structured data with ontologies.
+\item Developer of the platform \href{http://legislation.di.uoa.gr/}{Nomothesi@}, which functions as a portal of greek legislative text from all documents of the National Printing House. We extract legal, geospatial and textual references to entities, digitalizing this data as Semantic Web data by utilizing structured/semi-structured data with ontologies. Still contributing to the project when time allows.
 
 \item \begin{sloppypar}
 \textbf{MSc Thesis} ``\href{https://pergamos.lib.uoa.gr/uoa/dl/frontend/en/browse/2766525}{Named Entity Recognition and Linking in Greek Legislation}''. Supervisors: Manolis Koubarakis (Professor, NKUA), Ilias Chalkidis (PhD Candidate, AUEB).
 The main focus was on neural networks technologies in the area of natural language processing with the aim of extracting named entities (persons, organisations, legal references, geo-political entities, public documents and unofficial geographical landmarks), 
-converting them into Semantic Web data and then linking them with other third party Semantic Web data (Greek Administrative Geography, Greek DBpedia ) using the tool Silk.
+converting them into Semantic Web data and then linking them with other third party Semantic Web data (Greek Administrative Geography, Greek DBpedia ) using Silk.
 
 \end{sloppypar}
 
@@ -190,8 +171,6 @@ The goal of this project was to develop an online algorithm that uses 3 distinct
 \item Participation in a 3-member team where the representation of multiple social networks as graphs, graph quries (multi-threaded) and multiple metrics regarding communities and cliques finding were implemented (in C) for ``Software Development'' undergrad course.
 
 \item Development of a \href{http://dl104.madgik.di.uoa.gr/eamgroup56/index.php}{lending library website} with user roles and shopping cart functionalities for ``Human-Computer Interaction'' undergrad course.
-
-\item Geospatial data manipulation and production in the topics of LAI (Leaf Area Index) of Paris (from netCDF format), $NO_2$ , $O_3$ , $UV$ emissions in Europe and oil-spills in Sweeden for the \href{http://www.app-lab.eu/}{Copernicus App Lab} in addition to writing of scripts to automate tasks within the group and improve efficiency. 
 
 \end{itemize}
 
@@ -224,25 +203,27 @@ The goal of this project was to develop an online algorithm that uses 3 distinct
 
 \begin{itemize}
 
-\item Soft Skills: communication, team player, patient.
+\item Soft Skills: communication, team player, patient, ability to cooperate remotely.
 
-\item Programming Languages: \textlatin{C, C++, Java, Prolog, Haskell, Assembly (MIPS), Python, LUA, OpenGL, SPARQL/GeoSPARQL/stSPARQL, SMILE}.
+\item Programming Languages: \textlatin{C, C++, Java, Python}.
 
-\item Operating Systems: \textlatin{GNU/LINUX (Arch Linux, Manjaro, Debian, *buntu (Server), Fedora, OpenSuse, Kali/Backtrack, Arch, Mandriva, Mint, Debian, Slackware/Slackel, Puppy), Microsoft Windows (95, 98, 2000, XP, Vista, 7, 8, 10)}.
+\item Operating Systems: \textlatin{GNU/LINUX (including advanced distros like Arch and Manjaro), Microsoft Windows, MacOS}.
 
-\item Shell Scripting: \textlatin{bash, fish, zsh, tcsh, csh}.
+\item Shell Scripting: \textlatin{bash, zsh}.
 
-\item Applications Development \textlatin{RESTful Web Services, Android Studio development, TLS/SSL protocols, Bootstrap, Sweet Alert, Bootstrap Validator, bower, npm, HTML 5, CSS3, Ajax, jQuery, PHP, Javascript, Gradle, Maven, NodeJS, React, Redux}.
+\item Frameworks \& Libraries: \textlatin{Spring ecosystem, Bootstrap, Keras, Tensorflow, SciKit Learn, Numpy, Pandas}.
 
-\item Server Management \& Databases: \textlatin{Apache Tomcat, Glassfish, Apache HTTP Server/XAMPP, PHPMyAdmin, MySQL Workbench, PostgreSQL/PostGIS, pgAdmin, Redis}.
+\item Style Sheet and Doc Languages: \textlatin{HTML5, CSS3, XML, SOAP, RDF, OWL}.
 
-\item Integrated Desktop Environments: \textlatin{Intellij, PyCharm, WebStorm, PHPStorm, Vistual Studio Code, Netbeans}.
+\item Servers \& Databases: \textlatin{Apache Tomcat, Wildfly/Jboss, Glassfish, Apache HTTP Server/XAMPP, PHPMyAdmin, MySQL Workbench, pgAdmin, SQL, Oracle, PostgreSQL/PostGIS, Redis, (Geo/st)SPARQL}.
 
-\item Geospatial Systems: \textlatin{Sextant, Strabon}.
+\item IDEs: \textlatin{Intellij, Android Studio, PyCharm, WebStorm, PHPStorm, VS Code, Netbeans}.
+
+\item Geospatial Systems: \textlatin{Sextant, Strabon, QGis}.
 
 \item Version Control Systems: \textlatin{Mercurial, Git, CVS, GitHub, GitLab, Bitbucket}.
 
-\item General: \textlatin{\LaTeX, Microsoft Office, Matlab, Gimp}.
+\item General: \textlatin{AOP, design patterns, \LaTeX, Microsoft Office Suite, Matlab, Gimp}.
 
 \end{itemize}
 
@@ -262,8 +243,6 @@ The goal of this project was to develop an online algorithm that uses 3 distinct
 
 \begin{itemize}
 
-\item \textbf{\underline{I. Angelidis}, I. Chalkidis, C. Papaloukas and M. Koubarakis}. ``\textit{The Greek Legal Knowledge Graph: A Progress Report}''. Submitted, 2019. [\href{https://iosang.github.io/documents/Publications/2019/ISWC2019_Resources_126.pdf}{E-PRINT}].
-
 \item \textbf{T. Beris, \underline{I. Angelidis}, I. Chalkidis, C. Nikolaou, C. Papaloukas, P. Soursos and M. Koubarakis}. ``\textit{Towards a Decentralised, Trusted, Intelligent and Linked Public Sector. A Report from the Greek Trenches}''. LDOW/LDDL workshop, The Web Conference (WWW 2019), San Francisco, CA, USA, 13 May, 2019. [\href{https://dl.acm.org/citation.cfm?doid=3308560.3317077}{PUB}][\href{https://iosang.github.io/documents/Publications/2019/www19companion-206.pdf}{E-PRINT}][\href{https://iosang.github.io/documents/Publications/2019/3317077.bib}{BIB}].
 
 \item \textbf{\underline{I. Angelidis}, I. Chalkidis, C. Nikolaou, P. Soursos and M. Koubarakis}. ``\textit{Nomothesia: A Linked Data Platform for Greek Legislation}''. MIREL workshop, Luxembourg Logic for AI Summit (LuxLogAI 2018), Luxembourg, 17 September, 2018. [\href{https://ora.ox.ac.uk/objects/uuid:b19c1428-49db-402b-8afd-b8cf588e147d}{PUB}][\href{https://iosang.github.io/documents/Publications/2018/nomothesia-linked-data.pdf}{E-PRINT}][\href{https://ora.ox.ac.uk/objects/uuid:b19c1428-49db-402b-8afd-b8cf588e147d/export_record.bibtex}{BIB}].
@@ -279,24 +258,12 @@ The goal of this project was to develop an online algorithm that uses 3 distinct
 \subsection*{Research interests}
 \addcontentsline{toc}{subsection}{Research interests}
 
-\begin{itemize}
-
-\item Deep Learning for NLP
-\item Legal Text Analytics - Legislation Publishing, Contract Analysis
-\item Information Extraction - Named Entity Recognition and Linking
-\item Text Segmentation - Legal Text Segmentation, Zoning, Sentence Boundary Detection
-\item Text Classification - Document/Sentence Classification
-\item Self-supervised Document Classification
-\item Data Augmentation
-\item Legal Knowledge Representation - Legislation, Contracts
-\item E-Government – Linked Open Data
-
-\end{itemize}
+My research interests focus on Artificial Intelligence, Deep Learning, NLP and Semantic Web Technologies.
 
 \subsection*{Hobbies and interests}
 \addcontentsline{toc}{subsection}{Hobbies and interests}
 
-Apart from being a data scientist, I thoroughly enjoy travelling and visiting archaeological sites.
+Apart from being a developer and data scientist, I thoroughly enjoy travelling and visiting archaeological sites.
 
 I strongly believe in the benefits of choosing swimming as a form of exercising over regular gymnastics. I used to go swimming for 6 years in boarding school and have taken a liking to it ever since. Of course, swimming does not have to be limited during summer, if one can endure the cold!
 
