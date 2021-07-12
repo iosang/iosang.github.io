@@ -336,32 +336,41 @@
   }
 }
 
+
 \newcommand\idphoto{
-	\ifthenelse{\equal{\@photoshape}{square}}{
+	\ifthenelse{\equal{\@qrcodeshape}{square}}{
 		% Draw square photo
     \begin{tikzpicture}
+      \ifthenelse{\equal{\@photoshape}{square}}{
+        \tikz\path[fill overzoom image={\@photo}]rectangle(\linewidth,\linewidth);
+      }{}
       \tikz\path[fill overzoom image={\@qrcode}]rectangle(\linewidth,\linewidth);
-      \tikz\path[fill overzoom image={\@photo}]rectangle(\linewidth,\linewidth);
     \end{tikzpicture}
 	}{
-		\ifthenelse{\equal{\@photoshape}{roundedsquare}}{
+		\ifthenelse{\equal{\@qrcodeshape}{roundedsquare}}{
 			% Draw square photo with rounded corners
       \begin{tikzpicture}
+        \ifdef{\@photoshape}{
+          \tikz\path[fill overzoom image={\@photo}][rounded corners=2mm]rectangle(\linewidth,\linewidth);
+        }{}
         \tikz\path[fill overzoom image={\@qrcode}][rounded corners=2mm]rectangle(\linewidth,\linewidth);
-        \tikz\path[fill overzoom image={\@photo}][rounded corners=2mm]rectangle(\linewidth,\linewidth);
       \end{tikzpicture}
 		}{
-			\ifthenelse{\equal{\@photoshape}{squircle}}{
+			\ifthenelse{\equal{\@qrcodeshape}{squircle}}{
 				% Draw squircle photo
         \begin{tikzpicture}
+        \ifdef{\@photoshape}{
+				  \tikz\path[fill overzoom image={\@photo}][rounded corners=8mm]rectangle(\linewidth,\linewidth);
+        }{}
         \tikz\path[fill overzoom image={\@qrcode}][rounded corners=8mm]rectangle(\linewidth,\linewidth);
-				\tikz\path[fill overzoom image={\@photo}][rounded corners=8mm]rectangle(\linewidth,\linewidth);
         \end{tikzpicture}
 				}{
 					% Draw circular photo
           \begin{tikzpicture}
+            \ifdef{\@photoshape}{
+              \tikz\path[fill overzoom image={\@photo}]circle[radius=0.5\linewidth];
+            }{}
             \tikz\path[fill overzoom image={\@qrcode}]circle[radius=0.5\linewidth];
-            \tikz\path[fill overzoom image={\@photo}]circle[radius=0.5\linewidth];
           \end{tikzpicture}
 				}
 		}
@@ -376,33 +385,33 @@
 % Needs \@firstname, \@lastname and \@tagline to be defined
 \newcommand*{\makecvheader}{
   \ifundef{\@alternative}{
-    \ifundef{\@photodiameter}{
+    \ifundef{\@qrcodediameter}{
       \begin{minipage}{\linewidth}
     }{
-      \begin{minipage}{\dimexpr\linewidth-\@photodiameter-12em}
+      \begin{minipage}{\dimexpr\linewidth-\@qrcodediameter-12em}
     }
     \color{accentcolor}\user{\@firstname}{\@lastname}\color{black}\\
     \small{\@socialinfo}
     \end{minipage}
-    \ifdef{\@photodiameter}{
-      \begin{minipage}{\@photodiameter}
+    \ifdef{\@qrcodediameter}{
+      \begin{minipage}{\@qrcodediameter}
         \idphoto
       \end{minipage}
     }{}
     \resumetitle{\@tagline}
   }{
-    \ifundef{\@photodiameter}{
+    \ifundef{\@qrcodediameter}{
       \begin{minipage}{\linewidth}
     }{
-      \begin{minipage}{\dimexpr\linewidth-\@photodiameter-12em}
+      \begin{minipage}{\dimexpr\linewidth-\@qrcodediameter-12em}
     }
     \user{\@firstname}{\@lastname}\\
     \resumetitle{\@tagline}
     \smallskip\\
     \small{\@socialinfo}
     \end{minipage}
-    \ifdef{\@photodiameter}{
-      \begin{minipage}{\@photodiameter}
+    \ifdef{\@qrcodediameter}{
+      \begin{minipage}{\@qrcodediameter}
         \idphoto
       \end{minipage}
     }{}
